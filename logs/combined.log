@@ -1,0 +1,4 @@
+{"level":"info","message":"Global middleware: User 6831abc04aa0208fbaae083c authenticated via token","service":"soillink-app","timestamp":"2025-05-24T15:14:49.274Z"}
+{"level":"info","message":"Global middleware: User 6831abc04aa0208fbaae083c authenticated via token","service":"soillink-app","timestamp":"2025-05-24T15:14:51.274Z"}
+{"level":"info","message":"Global middleware: User 6831abc04aa0208fbaae083c authenticated via token","service":"soillink-app","timestamp":"2025-05-24T15:15:59.391Z"}
+{"level":"warn","message":"MongoDB disconnected","service":"soillink-app","timestamp":"2025-05-24T15:17:34.520Z"}
