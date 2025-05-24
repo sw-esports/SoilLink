@@ -1,0 +1,23 @@
+<% if (typeof success_msg !== 'undefined' && success_msg.length > 0) { %>
+  <div class="alert alert-success">
+    <i class="fas fa-check-circle"></i>
+    <%= success_msg %>
+    <button type="button" class="close-alert">&times;</button>
+  </div>
+<% } %>
+
+<% if (typeof error_msg !== 'undefined' && error_msg.length > 0) { %>
+  <div class="alert alert-error">
+    <i class="fas fa-exclamation-circle"></i>
+    <%= error_msg %>
+    <button type="button" class="close-alert">&times;</button>
+  </div>
+<% } %>
+
+<% if (typeof error !== 'undefined' && error.length > 0) { %>
+  <div class="alert alert-error">
+    <i class="fas fa-exclamation-circle"></i>
+    <%= error %>
+    <button type="button" class="close-alert">&times;</button>
+  </div>
+<% } %>

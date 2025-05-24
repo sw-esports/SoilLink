@@ -1,0 +1,243 @@
+<div class="dashboard-container">
+  <div class="dashboard-sidebar">
+    <div class="user-info">
+      <div class="user-avatar">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="user-details">
+        <h3><%= (profileUser && profileUser.name) || (user && user.name) || 'User' %></h3>
+        <p><%= (profileUser && profileUser.email) || (user && user.email) || '' %></p>
+      </div>
+    </div>
+    
+    <nav class="dashboard-nav">
+      <ul>
+        <li>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+          </a>
+        </li>
+        <li class="active">
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/profile">
+            <i class="fas fa-user"></i> Profile
+          </a>
+        </li>
+        <li>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil-analysis">
+            <i class="fas fa-flask"></i> Soil Analysis
+          </a>
+        </li>
+        <li>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/reports">
+            <i class="fas fa-chart-bar"></i> Reports
+          </a>
+        </li>
+        <li>
+          <a href="/auth/logout">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="dashboard-content">
+    <div class="dashboard-header">
+      <h1>My Profile</h1>
+      <p>Manage your account information</p>
+    </div>
+    
+    <div class="profile-container">
+      <div class="profile-section">
+        <div class="section-header">
+          <h2>Personal Information</h2>
+        </div>
+        <form action="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/profile" method="POST" class="profile-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" value="<%= (profileUser && profileUser.name) || (user && user.name) || '' %>" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" value="<%= (profileUser && profileUser.email) || (user && user.email) || '' %>" required disabled />
+              <small class="form-text">Email cannot be changed</small>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">
+            Save Changes
+          </button>
+        </form>
+      </div>
+      
+      <div class="profile-section">
+        <div class="section-header">
+          <h2>Change Password</h2>
+        </div>
+        <form action="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/password" method="POST" class="profile-form">
+          <div class="form-group">
+            <label for="currentPassword">Current Password</label>
+            <div class="input-group">
+              <input type="password" id="currentPassword" name="currentPassword" required />
+              <span class="toggle-password"><i class="fas fa-eye"></i></span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="newPassword">New Password</label>
+            <div class="input-group">
+              <input type="password" id="newPassword" name="newPassword" required minlength="8" />
+              <span class="toggle-password"><i class="fas fa-eye"></i></span>
+            </div>
+            <div class="password-strength">
+              <div class="strength-meter"></div>
+              <span class="strength-text">Password strength</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="confirmNewPassword">Confirm New Password</label>
+            <div class="input-group">
+              <input type="password" id="confirmNewPassword" name="confirmNewPassword" required minlength="8" />
+              <span class="toggle-password"><i class="fas fa-eye"></i></span>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">
+            Update Password
+          </button>
+        </form>
+      </div>
+      
+      <div class="profile-section">
+        <div class="section-header">
+          <h2>Account Management</h2>
+        </div>
+        <div class="danger-zone">
+          <h3>Danger Zone</h3>
+          <p>Once you delete your account, there is no going back. Please be certain.</p>
+          <button class="btn btn-danger" data-toggle="modal" data-target="#deleteAccountModal">
+            <i class="fas fa-exclamation-triangle"></i> Delete Account
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Account Modal -->
+<div class="modal" id="deleteAccountModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Delete Account</h3>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to delete your account? All of your data will be permanently removed. This action cannot be undone.</p>
+      <div class="form-group">
+        <label for="deleteConfirm">Please type "DELETE" to confirm:</label>
+        <input type="text" id="deleteConfirm" name="deleteConfirm" placeholder="DELETE" required />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-danger" id="confirmDelete" disabled>Delete Permanently</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Toggle password visibility
+    const toggleButtons = document.querySelectorAll('.toggle-password');
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const input = this.previousElementSibling;
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        this.querySelector('i').classList.toggle('fa-eye');
+        this.querySelector('i').classList.toggle('fa-eye-slash');
+      });
+    });
+    
+    // Password strength meter
+    const newPassword = document.getElementById('newPassword');
+    if (newPassword) {
+      const strengthMeter = document.querySelector('.strength-meter');
+      const strengthText = document.querySelector('.strength-text');
+      
+      newPassword.addEventListener('input', function() {
+        const val = newPassword.value;
+        let strength = 0;
+        
+        if (val.length >= 8) strength += 25;
+        if (val.match(/[a-z]+/)) strength += 25;
+        if (val.match(/[A-Z]+/)) strength += 25;
+        if (val.match(/[0-9]+/) || val.match(/[^a-zA-Z0-9]+/)) strength += 25;
+        
+        strengthMeter.style.width = strength + '%';
+        
+        if (strength < 25) {
+          strengthText.textContent = 'Very weak';
+          strengthMeter.style.backgroundColor = '#ff4d4d';
+        } else if (strength < 50) {
+          strengthText.textContent = 'Weak';
+          strengthMeter.style.backgroundColor = '#ffa64d';
+        } else if (strength < 75) {
+          strengthText.textContent = 'Medium';
+          strengthMeter.style.backgroundColor = '#ffff4d';
+        } else {
+          strengthText.textContent = 'Strong';
+          strengthMeter.style.backgroundColor = '#4dff4d';
+        }
+      });
+    }
+    
+    // Modal handling
+    const modal = document.getElementById('deleteAccountModal');
+    const modalOpenBtn = document.querySelector('[data-toggle="modal"]');
+    const modalCloseBtn = document.querySelector('.close-modal');
+    const cancelBtn = document.querySelector('[data-dismiss="modal"]');
+    const confirmDeleteBtn = document.getElementById('confirmDelete');
+    const deleteConfirmInput = document.getElementById('deleteConfirm');
+    
+    if (modalOpenBtn && modal) {
+      modalOpenBtn.addEventListener('click', function() {
+        modal.classList.add('show');
+        document.body.classList.add('modal-open');
+      });
+    }
+    
+    if (modalCloseBtn && modal) {
+      modalCloseBtn.addEventListener('click', function() {
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+      });
+    }
+    
+    if (cancelBtn && modal) {
+      cancelBtn.addEventListener('click', function() {
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+      });
+    }
+    
+    if (deleteConfirmInput && confirmDeleteBtn) {
+      deleteConfirmInput.addEventListener('input', function() {
+        confirmDeleteBtn.disabled = this.value !== 'DELETE';
+      });
+    }
+    
+    if (confirmDeleteBtn) {
+      confirmDeleteBtn.addEventListener('click', function() {
+        // Submit delete request - this would be connected to a proper endpoint
+        if (deleteConfirmInput.value === 'DELETE') {
+          alert('Account deletion functionality would go here');
+          // window.location.href = '/auth/logout';
+        }
+      });
+    }
+  });
+</script>

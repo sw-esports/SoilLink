@@ -1,0 +1,133 @@
+<section class="hero bg-gradient-to-br from-green-100 to-green-300 py-20 relative overflow-hidden">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+    <div class="hero-content flex-1 z-10 animate-fade-in-up">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-primary-dark leading-tight">
+        Maximize Your Crop Yield with <span class="highlight bg-yellow-200 px-2 rounded animate-pulse">SoilLink</span>
+      </h1>
+      <p class="hero-text text-xl md:text-2xl text-primary-dark mb-8 animate-fade-in">
+        Advanced soil quality analysis for modern agriculture.<br>
+        <span class="text-primary">Understand your soil better to grow healthier, more sustainable crops.</span>
+      </p>
+      <div class="hero-buttons flex gap-4 mb-8 animate-fade-in">
+        <a href="/auth/register" class="btn btn-primary bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-8 py-4 rounded-lg shadow-lg text-lg font-bold transition-transform transform hover:scale-105 animate-bounce">Get Started <i class="fas fa-arrow-right"></i></a>
+        <a href="/about" class="btn btn-outline border-2 border-primary text-primary-dark px-8 py-4 rounded-lg font-bold hover:bg-primary hover:text-white transition-colors duration-300">Learn More</a>
+      </div>
+      <div class="flex flex-wrap gap-6 mt-8 animate-fade-in">
+        <div class="bg-white/80 rounded-lg shadow px-6 py-4 flex items-center gap-3 hover:scale-105 transition-transform">
+          <i class="fas fa-seedling text-green-600 text-2xl animate-bounce"></i>
+          <span class="font-semibold text-primary-dark">Real-time Monitoring</span>
+        </div>
+        <div class="bg-white/80 rounded-lg shadow px-6 py-4 flex items-center gap-3 hover:scale-105 transition-transform">
+          <i class="fas fa-microscope text-yellow-600 text-2xl animate-spin-slow"></i>
+          <span class="font-semibold text-primary-dark">AI Soil Analysis</span>
+        </div>
+        <div class="bg-white/80 rounded-lg shadow px-6 py-4 flex items-center gap-3 hover:scale-105 transition-transform">
+          <i class="fas fa-leaf text-green-400 text-2xl animate-pulse"></i>
+          <span class="font-semibold text-primary-dark">Eco-Friendly</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image flex-1 flex justify-center items-center relative animate-fade-in-up">
+      <img src="/src/images/hero-visual.svg" alt="SoilLink Hero Visual" class="w-[480px] max-w-full drop-shadow-2xl animate-float" loading="eager">
+      <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-gradient-move"></div>
+    </div>
+  </div>
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+    <div class="absolute w-96 h-96 bg-yellow-100 rounded-full opacity-30 blur-3xl left-[-10%] top-[-10%] animate-pulse"></div>
+    <div class="absolute w-80 h-80 bg-green-200 rounded-full opacity-20 blur-2xl right-[-8%] bottom-[-8%] animate-pulse"></div>
+  </div>
+</section>
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fade-in-up 1.2s cubic-bezier(.4,0,.2,1) both; }
+.animate-fade-in { animation: fade-in-up 1.8s cubic-bezier(.4,0,.2,1) both; }
+@keyframes spin-slow { 100% { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 6s linear infinite; }
+@keyframes gradient-move {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-move { background: linear-gradient(270deg, #A5D6A7, #FFFDE7, #FFD54F, #43A047); background-size: 400% 400%; animation: gradient-move 10s ease-in-out infinite; opacity: 0.15; }
+</style>
+
+<section class="features">
+  <h2 class="section-title">Why Choose <span class="highlight">SoilLink</span>?</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-microscope"></i>
+      </div>
+      <h3>Advanced Analysis</h3>
+      <p>Get detailed insights into your soil's composition, nutrients, pH levels, and more.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h3>Sustainable Farming</h3>
+      <p>Make informed decisions that are good for your crops and the environment.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <h3>Increased Yield</h3>
+      <p>Optimize growing conditions for better harvest and increased profits.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-cloud-sun"></i>
+      </div>
+      <h3>Climate Adaptation</h3>
+      <p>Prepare your soil for changing climate conditions and weather patterns.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2 class="section-title">How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-icon"><i class="fas fa-vial"></i></div>
+      <h3>Collect Samples</h3>
+      <p>Follow our guidelines to collect soil samples from your field.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-icon"><i class="fas fa-flask"></i></div>
+      <h3>Analyze Results</h3>
+      <p>Our advanced systems analyze your soil composition and quality.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+      <h3>Get Recommendations</h3>
+      <p>Receive personalized insights and treatment recommendations.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-icon"><i class="fas fa-seedling"></i></div>
+      <h3>Improve Growth</h3>
+      <p>Implement changes and watch your crops thrive like never before.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-content">
+    <h2>Ready to transform your agricultural practices?</h2>
+    <p>Join thousands of farmers who have improved their crop yield with SoilLink's soil analysis.</p>
+    <a href="/auth/register" class="btn btn-primary btn-large">Start Your Soil Journey Today</a>
+  </div>
+</section>
+
+<script src="/js/home.js"></script>

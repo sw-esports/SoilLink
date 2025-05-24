@@ -1,0 +1,928 @@
+<main class="container mx-auto p-4 mt-8">
+    <div class="max-w-md mx-auto bg-gradient-to-br from-cardBg to-white p-8 rounded-lg shadow-lg transform transition-all duration-500 hover:shadow-xl">
+        <div class="text-center mb-8">
+            <div class="inline-block mb-3">
+                <div class="relative float-animation">
+                    <div class="absolute -top-6 -right-6 text-accent animate-pulse">
+                        <i class="fa-solid fa-seedling text-4xl"></i>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 text-primary-light opacity-70">
+                        <i class="fa-solid fa-leaf text-2xl"></i>
+                    </div>
+                    <svg class="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
+                    </svg>
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">Join SoilLink</h2>
+            <p class="text-gray-600 mt-2">Create your account to start monitoring your soil health</p>
+        </div>
+        
+        <script defer src="/js/validation-rules.js"></script>
+        <script defer src="/js/form-validator.js"></script>
+        <script defer src="/js/register.js"></script>
+        
+        <form id="registerForm" class="space-y-5" action="/auth/register" method="POST" novalidate>
+            <!-- General form error message -->
+            <div class="form-error-message"></div>
+            
+            <div class="relative mb-5 group">
+                <label for="name" class="block text-sm font-medium mb-2 text-primary-dark group-hover:text-primary transition-colors duration-300">Full Name</label>
+                <div class="relative overflow-hidden rounded-lg">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors duration-300">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        value="<%= typeof name !== 'undefined' ? name : '' %>"
+                        placeholder="Enter your name"
+                        data-validate="name"
+                        class="w-full pl-10 pr-4 py-3 border border-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent rounded-lg bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm transition-all duration-300 hover:shadow-inner" 
+                        required
+                    >
+                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                <div class="error-message" data-error-for="name"></div>
+            </div>
+            
+            <div class="relative mb-5 group">
+                <label for="email" class="block text-sm font-medium mb-2 text-primary-dark group-hover:text-primary transition-colors duration-300">Email Address</label>
+                <div class="relative overflow-hidden rounded-lg">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors duration-300">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        value="<%= typeof email !== 'undefined' ? email : '' %>"
+                        placeholder="name@example.com"
+                        data-validate="email"
+                        class="w-full pl-10 pr-4 py-3 border border-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent rounded-lg bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm transition-all duration-300 hover:shadow-inner" 
+                        required
+                    >
+                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-500 group-hover:w-full"></div>
+                    
+                    <!-- Email validation status indicator (shows check mark or error icon) -->
+                    <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-300 email-status-indicator">
+                        <i class="fa-solid fa-circle-check text-green-500 hidden"></i>
+                        <i class="fa-solid fa-circle-exclamation text-red-500 hidden"></i>
+                    </div>
+                </div>
+                <div class="error-message" data-error-for="email"></div>
+            </div>
+
+            <div class="relative mb-5 group">
+                <label for="password" class="block text-sm font-medium mb-2 text-primary-dark group-hover:text-primary transition-colors duration-300">Password</label>
+                <div class="relative overflow-hidden rounded-lg">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors duration-300">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password"
+                        data-validate="password"
+                        placeholder="Create a secure password" 
+                        class="w-full pl-10 pr-12 py-3 border border-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent rounded-lg bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm transition-all duration-300 hover:shadow-inner" 
+                        required
+                    >
+                    <button type="button" class="toggle-password absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary transition-colors duration-300">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                <div class="error-message" data-error-for="password"></div>
+            </div>
+            
+            <div class="relative mb-5 group">
+                <label for="confirmPassword" class="block text-sm font-medium mb-2 text-primary-dark group-hover:text-primary transition-colors duration-300">Confirm Password</label>
+                <div class="relative overflow-hidden rounded-lg">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors duration-300">
+                        <i class="fa-solid fa-lock-open"></i>
+                    </span>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword"
+                        data-validate="match" 
+                        data-match="password"
+                        placeholder="Confirm your password" 
+                        class="w-full pl-10 pr-12 py-3 border border-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent rounded-lg bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm transition-all duration-300 hover:shadow-inner" 
+                        required
+                    >
+                    <button type="button" class="toggle-password absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary transition-colors duration-300">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                <div class="error-message" data-error-for="confirmPassword"></div>
+            </div>
+              <div class="relative mb-4">
+                <div class="flex items-center py-2 px-3 bg-secondary-light bg-opacity-30 rounded-lg hover:bg-opacity-50 transition-all duration-300">
+                    <input 
+                        type="checkbox" 
+                        id="terms" 
+                        name="terms" 
+                        data-validate="required"
+                        class="h-5 w-5 text-primary border-secondary rounded focus:ring-primary transition duration-300"
+                        required
+                    >
+                    <label for="terms" class="ml-2 block text-sm text-gray-700">I agree to the <a href="/terms" class="text-primary hover:text-primary-dark underline">Terms of Service</a> and <a href="/privacy" class="text-primary hover:text-primary-dark underline">Privacy Policy</a></label>
+                </div>
+                
+                <div class="error-message" data-error-for="terms"></div>
+            </div>
+            
+            <div class="mt-8">
+                <button type="submit" data-loading-text="Creating account..." class="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-bold py-3 rounded-lg shadow-md transition duration-300 transform hover:translate-y-[-2px] hover:shadow-lg flex items-center justify-center group">
+                    <i class="fa-solid fa-user-plus mr-2"></i>
+                    Create Account
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+        </form>
+        
+        <div class="mt-6">
+            <div class="relative">
+             
+                
+            </div>
+
+       
+        </div>            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <a href="#" class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 transform hover:translate-y-[-1px] hover:shadow">
+                        <i class="fa-brands fa-google text-red-500 mr-2"></i>
+                        Google
+                    </a>
+                    <a href="#" class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 transform hover:translate-y-[-1px] hover:shadow">
+                        <i class="fa-brands fa-facebook text-blue-600 mr-2"></i>
+                        Facebook
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <p>Already have an account? <a href="/auth/login" class="text-primary hover:text-primary-dark font-medium transition-colors duration-300 underline">Log In</a></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        
+        main {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+    </style>
+
+<script>
+  // Advanced form validation with animations
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize form elements
+    const registerForm = document.getElementById('registerForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmInput = document.getElementById('confirmPassword');
+    const termsInput = document.getElementById('terms');
+    
+    // Initialize all inputs as untouched (for validation timing)
+    [nameInput, emailInput, passwordInput, confirmInput, termsInput].forEach(input => {
+      if (input) input.dataset.touched = 'false';
+    });
+    
+    // Helper functions for validation
+    
+    // Helper function to validate email
+    const validateEmail = function(input) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const statusIndicator = document.querySelector('.email-status-indicator');
+        const spinnerIcon = statusIndicator ? statusIndicator.querySelector('.fa-spinner') : null;
+        const checkIcon = statusIndicator ? statusIndicator.querySelector('.fa-circle-check') : null;
+        const errorIcon = statusIndicator ? statusIndicator.querySelector('.fa-circle-exclamation') : null;
+        const hintText = document.querySelector('.email-hint');
+        
+        // Clear server-side error alert when user starts typing
+        const serverErrorAlert = document.getElementById('serverErrorAlert');
+        if (serverErrorAlert && !serverErrorAlert.classList.contains('hidden')) {
+            serverErrorAlert.classList.add('opacity-0', '-translate-y-2');
+            setTimeout(() => {
+                serverErrorAlert.classList.add('hidden');
+            }, 500);
+        }
+        
+        // Reset indicators
+        if (statusIndicator) {
+            if (spinnerIcon) spinnerIcon.classList.add('hidden');
+            if (checkIcon) checkIcon.classList.add('hidden');
+            if (errorIcon) errorIcon.classList.add('hidden');
+        }
+        
+        if (hintText) {
+            hintText.classList.remove('hidden');
+        }
+        
+        // Hide any previous feedback
+        const feedbackEl = document.querySelector('.email-validation-feedback');
+        if (feedbackEl) feedbackEl.classList.add('hidden');
+        
+        // Don't show validation errors on initial empty input (only show on blur or submit)
+        if (!input.dataset.touched && !input.value.trim()) {
+            return false;
+        }
+        
+        // Empty check - only if the field has been interacted with
+        if (input.dataset.touched && !input.value.trim()) {
+            showError('email', 'Email is required');
+            if (errorIcon) errorIcon.classList.remove('hidden');
+            return false;
+        } 
+        
+        // If user is typing something, mark as touched
+        if (input.value.trim()) {
+            input.dataset.touched = 'true';
+        }
+        
+        // If no value, don't show error yet
+        if (!input.value.trim()) {
+            return false;
+        }
+        
+        // Show spinner during "checking" - simulate validation delay for UX
+        if (spinnerIcon) spinnerIcon.classList.remove('hidden');
+        
+        // Format check
+        if (!emailRegex.test(input.value)) {
+            setTimeout(() => {
+                if (spinnerIcon) spinnerIcon.classList.add('hidden');
+                if (errorIcon) errorIcon.classList.remove('hidden');
+                showError('email', 'Please enter a valid email address (e.g., user@example.com)');
+            }, 300);
+            return false;
+        } 
+        
+        // Domain check
+        const domain = input.value.split('@')[1]?.toLowerCase();
+        if (!domain) {
+            setTimeout(() => {
+                if (spinnerIcon) spinnerIcon.classList.add('hidden');
+                if (errorIcon) errorIcon.classList.remove('hidden');
+                showError('email', 'Please enter a complete email address with domain');
+            }, 300);
+            return false;
+        }
+        
+        // Check common domains
+        const commonDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'icloud.com', 'protonmail.com'];
+        const validExtensions = ['.com', '.org', '.net', '.edu', '.gov', '.co', '.io'];
+        
+        if (commonDomains.includes(domain)) {
+            // Valid common domains
+            setTimeout(() => {
+                if (spinnerIcon) spinnerIcon.classList.add('hidden');
+                if (errorIcon) errorIcon.classList.add('hidden');
+                if (checkIcon) checkIcon.classList.remove('hidden');
+                hideError('email');
+                showSuccessFeedback('email');
+                if (hintText) hintText.classList.add('hidden');
+            }, 300);
+            return true;
+        }
+        
+        // Check for valid domain extensions
+        let hasValidExtension = false;
+        for (const ext of validExtensions) {
+            if (domain.endsWith(ext)) {
+                hasValidExtension = true;
+                break;
+            }
+        }
+        
+        if (hasValidExtension) {
+            // Valid domain extension
+            setTimeout(() => {
+                if (spinnerIcon) spinnerIcon.classList.add('hidden');
+                if (errorIcon) errorIcon.classList.add('hidden');
+                if (checkIcon) checkIcon.classList.remove('hidden');
+                hideError('email');
+                showSuccessFeedback('email');
+                if (hintText) hintText.classList.add('hidden');
+            }, 300);
+            return true;
+        } else {
+            setTimeout(() => {
+                if (spinnerIcon) spinnerIcon.classList.add('hidden');
+                if (errorIcon) errorIcon.classList.remove('hidden');
+                showError('email', 'Please use a common domain extension (.com, .org, .net, etc.)');
+            }, 300);
+            return false;
+        }
+    };
+
+    // Show success feedback for email
+    const showSuccessFeedback = function(field) {
+        if (field === 'email') {
+            const feedbackEl = document.querySelector('.email-validation-feedback');
+            if (feedbackEl) {
+                feedbackEl.classList.remove('hidden');
+                const span = feedbackEl.querySelector('span');
+                if (span) span.textContent = 'Valid email format';
+            }
+        }
+    };
+      // Process backend validation errors if any
+    const showBackendErrors = function() {
+        try {
+            // Show server error message with animation if it exists
+            const serverErrorAlert = document.getElementById('serverErrorAlert');
+            if (serverErrorAlert) {
+                // Add close button functionality
+                const closeBtn = serverErrorAlert.querySelector('.close-alert');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function() {
+                        serverErrorAlert.classList.add('opacity-0', 'translate-x-2');
+                        setTimeout(() => {
+                            serverErrorAlert.classList.add('hidden');
+                        }, 500);
+                    });
+                }
+                
+                // Animate error message in after a short delay
+                setTimeout(() => {
+                    serverErrorAlert.classList.remove('opacity-0', 'translate-x-2');
+                    serverErrorAlert.classList.add('opacity-100', 'translate-x-0');
+                    
+                    // Auto-dismiss after 5 seconds
+                    setTimeout(() => {
+                        serverErrorAlert.classList.add('opacity-0', 'translate-x-2');
+                        setTimeout(() => {
+                            serverErrorAlert.classList.add('hidden');
+                        }, 500);
+                    }, 5000);
+                }, 300);
+            }
+            
+            // Handle specific field errors from server
+            if (typeof serverErrors !== 'undefined' && Object.keys(serverErrors).length > 0) {
+                // Delay showing field errors to avoid jarring experience
+                setTimeout(() => {
+                    for (const [field, message] of Object.entries(serverErrors)) {
+                        const inputField = document.getElementById(field);
+                        if (inputField) {
+                            // Only mark field as having error, but don't show animation initially
+                            inputField.classList.add('border-red-500');
+                            
+                            const errorContainer = document.querySelector(`.form-error[data-field="${field}"]`);
+                            if (errorContainer) {
+                                errorContainer.classList.remove('hidden');
+                                const errorText = errorContainer.querySelector('.error-text');
+                                if (errorText) {
+                                    errorText.textContent = message;
+                                }
+                                
+                                // Show error message without animation
+                                const errorMessage = errorContainer.querySelector('.error-message');
+                                if (errorMessage) {
+                                    errorMessage.classList.remove('opacity-0', '-translate-y-2');
+                                    errorMessage.classList.add('opacity-100', 'translate-y-0');
+                                }
+                            }
+                            
+                            // If it's an email error like "email already exists"
+                            if (field === 'email') {
+                                // Show appropriate icon
+                                const statusIndicator = document.querySelector('.email-status-indicator');
+                                if (statusIndicator) {
+                                    const errorIcon = statusIndicator.querySelector('.fa-circle-exclamation');
+                                    if (errorIcon) {
+                                        errorIcon.classList.remove('hidden');
+                                    }
+                                }
+                                
+                                // Hide email hint
+                                const emailHint = document.querySelector('.email-hint');
+                                if (emailHint) {
+                                    emailHint.classList.add('hidden');
+                                }
+                            }
+                        }
+                    }
+                    
+                    // Scroll to the first field with an error
+                    const firstErrorField = Object.keys(serverErrors)[0];
+                    const firstErrorElement = document.getElementById(firstErrorField);
+                    if (firstErrorElement) {
+                        firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 500);
+            }        } catch (e) {
+            // Error processing backend validation - fail silently
+        }
+    };
+    
+    // Helper functions for form validation
+    const showError = function(fieldName, message) {
+        const input = document.getElementById(fieldName);
+        if (!input) return;
+        
+        // Add visual feedback
+        input.classList.add('border-red-500', 'bg-red-50');
+        
+        // Shake effect for better visibility
+        input.classList.add('shake-animation');
+        setTimeout(() => {
+            input.classList.remove('shake-animation');
+        }, 820);
+        
+        // Hide any success indicator if present
+        if (fieldName === 'email') {
+            const feedbackEl = document.querySelector('.email-validation-feedback');
+            if (feedbackEl) feedbackEl.classList.add('hidden');
+        }
+        
+        const errorContainer = document.querySelector(`.form-error[data-field="${fieldName}"]`);
+        if (errorContainer) {   
+            errorContainer.classList.remove('hidden');
+            const errorText = errorContainer.querySelector('.error-text');
+            if (errorText) {
+                errorText.textContent = message;
+            }
+            
+            // Animate error message
+            const errorMessage = errorContainer.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.classList.remove('opacity-0', '-translate-y-2');
+                errorMessage.classList.add('opacity-100', 'translate-y-0');
+            }
+        }
+    };
+    
+    const hideError = function(fieldName) {
+        const input = document.getElementById(fieldName);
+        if (!input) return;
+        
+        input.classList.remove('border-red-500', 'bg-red-50');
+        
+        const errorContainer = document.querySelector(`.form-error[data-field="${fieldName}"]`);
+        if (errorContainer) {
+            const errorMessage = errorContainer.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.classList.add('opacity-0', '-translate-y-2');
+                errorMessage.classList.remove('opacity-100', 'translate-y-0');
+                
+                setTimeout(() => {
+                    errorContainer.classList.add('hidden');
+                }, 300); // Match transition duration
+            }
+        }
+    };
+    
+    const hideAllErrors = function() {
+        document.querySelectorAll('.form-error').forEach(error => {
+            error.classList.add('hidden');
+        });
+        
+        document.querySelectorAll('.border-red-500').forEach(input => {
+            input.classList.remove('border-red-500', 'bg-red-50');
+        });
+    };
+      // Initialize the password toggle buttons
+    const initPasswordToggles = () => {
+      document.querySelectorAll('.toggle-password').forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Locate the password input in the same relative container
+          const container = btn.closest('.relative');
+          if (!container) return;
+          const pwdInput = container.querySelector('input');
+          const icon = btn.querySelector('i');
+          if (!pwdInput || !icon) return;
+          // Toggle the input type
+          if (pwdInput.type === 'password') {
+            pwdInput.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+          } else {
+            pwdInput.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+          }
+        });
+      });
+    };
+    
+  
+    // Password strength meter
+    if (passwordInput) {
+        const meterContainer = document.querySelector('.password-meter');
+        const strengthBar = document.querySelector('.password-strength');
+        
+        if (meterContainer && strengthBar) {
+            passwordInput.addEventListener('input', function() {
+                // Show the meter when the user starts typing
+                meterContainer.classList.remove('hidden');
+                
+                const password = this.value;
+                
+                // Calculate password strength
+                let strength = 0;
+                
+                // Length check
+                if (password.length >= 8) strength += 20;
+                else if (password.length >= 6) strength += 10;
+                
+                // Complexity checks
+                if (password.match(/[a-z]/)) strength += 20;  // lowercase
+                if (password.match(/[A-Z]/)) strength += 20;  // uppercase
+                if (password.match(/[0-9]/)) strength += 20;  // numbers
+                if (password.match(/[^a-zA-Z0-9]/)) strength += 20;  // special chars
+                
+                // Update the meter
+                strengthBar.style.width = strength + '%';
+                
+                // Set the color based on strength
+                if (strength < 30) {
+                    strengthBar.style.backgroundColor = '#f44336'; // Red
+                } else if (strength < 60) {
+                    strengthBar.style.backgroundColor = '#ff9800'; // Orange
+                } else {
+                    strengthBar.style.backgroundColor = '#43a047'; // Green
+                }
+            });
+        }
+    }
+    
+    // Form validation with visual feedback
+    if (registerForm) {
+        // Show server errors if any, but with a slight delay for better UX
+        setTimeout(() => {
+            showBackendErrors();
+        }, 500);
+        
+        // Handle form submission
+        registerForm.addEventListener('submit', function(e) {
+            let isValid = true;
+            
+            // Reset all errors
+            hideAllErrors();
+            
+            // Validate name
+            if (!nameInput.value.trim()) {
+                showError('name', 'Name is required');
+                isValid = false;
+            } else {
+                hideError('name');
+            }
+            
+            // Validate email with stronger validation
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailInput.value.trim()) {
+                showError('email', 'Email is required');
+                isValid = false;
+            } else if (!emailRegex.test(emailInput.value)) {
+                showError('email', 'Please enter a valid email address (e.g., user@example.com)');
+                isValid = false;
+            } else {
+                // Additional checks for common domains
+                const domain = emailInput.value.split('@')[1].toLowerCase();
+                if (domain === 'gmail.com' || domain === 'yahoo.com' || domain === 'hotmail.com' || domain === 'outlook.com') {
+                    // Valid common domains
+                    hideError('email');
+                    showSuccessFeedback('email');
+                } else if (domain.endsWith('.com') || domain.endsWith('.org') || domain.endsWith('.net') || 
+                           domain.endsWith('.edu') || domain.endsWith('.gov')) {
+                    // Valid domain extensions
+                    hideError('email');
+                    showSuccessFeedback('email');
+                } else {
+                    showError('email', 'Please enter a valid email with a common domain (.com, .org, .net, etc.)');
+                    isValid = false;
+                }
+            }
+            
+            // Validate password
+            if (!passwordInput.value) {
+                showError('password', 'Password is required');
+                isValid = false;
+            } else if (passwordInput.value.length < 6) {
+                showError('password', 'Password must be at least 6 characters long');
+                isValid = false;
+            } else {
+                hideError('password');
+            }
+            
+            // Validate password confirmation
+            if (confirmInput.value !== passwordInput.value) {
+                showError('confirmPassword', 'Passwords do not match');
+                isValid = false;
+            } else {
+                hideError('confirmPassword');
+            }
+            
+            // Validate terms agreement
+            if (!termsInput.checked) {
+                // Show error message and add shake animation
+                showError('terms', 'You must agree to the terms and conditions');
+                termsInput.classList.add('shake-animation');
+                setTimeout(() => {
+                    termsInput.classList.remove('shake-animation');
+                }, 600);
+                isValid = false;
+            } else {
+                hideError('terms');
+            }
+            
+            if (!isValid) {
+                e.preventDefault();
+                // Smooth scroll to the first error with animation
+                const firstError = document.querySelector('.border-red-500');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+        
+        // Real-time validation
+        const inputs = registerForm.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                // Clear any server error message when user starts typing
+                const serverErrorAlert = document.getElementById('serverErrorAlert');
+                if (serverErrorAlert && !serverErrorAlert.classList.contains('hidden')) {
+                    serverErrorAlert.classList.add('opacity-0', '-translate-y-2');
+                    setTimeout(() => {
+                        serverErrorAlert.classList.add('hidden');
+                    }, 500);
+                }
+                
+                if (this.id === 'name') {
+                    if (this.value.trim()) {
+                        hideError('name');
+                    } else if (this.dataset.touched) {
+                        // Only show error if field has been touched (clicked in and out)
+                        showError('name', 'Name is required');
+                    }
+                }
+                
+                if (this.id === 'email') {
+                    // Only validate if there's a value or if the field has been touched
+                    if (this.value.trim() || this.dataset.touched) {
+                        validateEmail(this);
+                    } else {
+                        // Just hide the error if they're starting fresh
+                        hideError('email');
+                    }
+                }
+                
+                if (this.id === 'password') {
+                    if (this.value.length >= 6) {
+                        hideError('password');
+                        
+                        // Check confirm password match
+                        if (confirmInput.value && confirmInput.value === this.value) {
+                            hideError('confirmPassword');
+                        } else if (confirmInput.value) {
+                            showError('confirmPassword', 'Passwords do not match');
+                        }
+                    } else if (this.value && this.dataset.touched) {
+                        // Only show error if field has been touched or has some value
+                        showError('password', 'Password must be at least 6 characters long');
+                    } else {
+                        hideError('password');
+                    }
+                }
+                
+                if (this.id === 'confirmPassword') {
+                    if (this.value === passwordInput.value) {
+                        hideError('confirmPassword');
+                    } else if (this.value && this.dataset.touched) {
+                        // Only show error if field has been touched or has some value
+                        showError('confirmPassword', 'Passwords do not match');
+                    }
+                }
+                
+                if (this.id === 'terms') {
+                    if (this.checked) {
+                        hideError('terms');
+                    } else if (this.dataset.touched) {
+                        // Only show error if checkbox has been interacted with
+                        showError('terms', 'You must agree to the terms and conditions');
+                    }
+                }
+            });
+            
+            // Validate on blur (when user leaves the field)
+            input.addEventListener('blur', function() {
+                // Mark field as touched when user leaves it
+                this.dataset.touched = 'true';
+                
+                // Clear server error alert if visible
+                const serverErrorAlert = document.getElementById('serverErrorAlert');
+                if (serverErrorAlert && !serverErrorAlert.classList.contains('hidden')) {
+                    serverErrorAlert.classList.add('opacity-0', '-translate-y-2');
+                    setTimeout(() => {
+                        serverErrorAlert.classList.add('hidden');
+                    }, 500);
+                }
+                
+                if (this.id === 'name' && !this.value.trim()) {
+                    showError('name', 'Name is required');
+                }
+                
+                if (this.id === 'email') {
+                    validateEmail(this);
+                }
+                
+                if (this.id === 'password' && !this.value) {
+                    showError('password', 'Password is required');
+                } else if (this.id === 'password' && this.value.length < 6) {
+                    showError('password', 'Password must be at least 6 characters long');
+                }
+                
+                if (this.id === 'confirmPassword' && this.value !== passwordInput.value) {
+                    showError('confirmPassword', 'Passwords do not match');
+                }
+            });
+        });
+    }
+    
+    // Add floating animations to icons
+    const registerIcon = document.querySelector('.float-animation');
+    if (registerIcon) {
+        registerIcon.style.animation = 'float 6s ease-in-out infinite';
+    }
+    
+    // Define keyframe animations
+    if (!document.getElementById('custom-animations')) {
+        const style = document.createElement('style');
+        style.id = 'custom-animations';
+        style.textContent = 
+            "@keyframes float {" +
+                "0% { transform: translateY(0px); }" +
+                "50% { transform: translateY(-10px); }" +
+                "100% { transform: translateY(0px); }" +
+            "}" +
+            "@keyframes bounce {" +
+                "0%, 100% { transform: translateY(0); }" +
+                "50% { transform: translateY(-10px); }" +
+            "}" +
+            "@keyframes fadeInUp {" +
+                "from { opacity: 0; transform: translate3d(0, 20px, 0); }" +
+                "to { opacity: 1; transform: translate3d(0, 0, 0); }" +
+            "}" +
+            "@keyframes shake {" +
+                "0%, 100% { transform: translateX(0); }" +
+                "10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }" +
+                "20%, 40%, 60%, 80% { transform: translateX(5px); }" +
+            "}" +
+            ".shake-animation { animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both; }" +
+            ".animate-shake { animation: shake 0.6s ease-in-out; }";
+        document.head.appendChild(style);
+    }
+
+  // Form submission handler
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('signup-form'); // Update with your form ID
+    
+    if (form) {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent page reload
+        
+        // Remove any existing toast notifications
+        removeAllToasts();
+        
+        const formData = new FormData(form);
+        const email = formData.get('email');
+        
+        try {
+          const response = await fetch('/api/register', { // Update with your API endpoint
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Object.fromEntries(formData)),
+          });
+          
+          const data = await response.json();
+          
+          if (!response.ok) {
+            // Handle error responses
+            if (data.error === 'email_exists') {
+              showToast('Email already exists! Please use a different email.', 'error');
+            } else {
+              showToast(data.message || 'Something went wrong!', 'error');
+            }          } else {
+            // Success case
+            showToast('Registration successful!', 'success');
+            form.reset(); // Optional: reset the form on success
+          }
+        } catch (error) {
+          showToast('Network error. Please try again.', 'error');
+          // Log error for debugging in development only
+        }
+      });
+    }
+  });
+
+  // Toast notification system
+  function showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+      <div class="toast-content">
+        <span>${message}</span>
+        <button class="toast-close">&times;</button>
+      </div>
+    `;
+    
+    document.body.appendChild(toast);
+    
+    // Automatically position toasts
+    const toasts = document.querySelectorAll('.toast');
+    let offset = 20;
+    
+    toasts.forEach(t => {
+      if (t !== toast) {
+        offset += t.offsetHeight + 10;
+      }
+    });
+    
+    toast.style.top = `${offset}px`;
+    
+    // Add show class after a small delay to trigger animation
+    setTimeout(() => {
+      toast.classList.add('show');
+    }, 10);
+    
+    // Auto-dismiss after 5 seconds
+    const timeout = setTimeout(() => {
+      removeToast(toast);
+    }, 5000);
+    
+    // Close button handler
+    toast.querySelector('.toast-close').addEventListener('click', () => {
+      clearTimeout(timeout);
+      removeToast(toast);
+    });
+    
+    return toast;
+  }
+
+  function removeToast(toast) {
+    toast.classList.remove('show');
+    setTimeout(() => {
+      toast.remove();
+      repositionToasts();
+    }, 300);
+  }
+
+  function removeAllToasts() {
+    const toasts = document.querySelectorAll('.toast');
+    toasts.forEach(toast => {
+      toast.remove();
+    });
+  }
+
+  function repositionToasts() {
+    const toasts = document.querySelectorAll('.toast');
+    let offset = 20;
+    
+    toasts.forEach(toast => {
+      toast.style.top = `${offset}px`;
+      offset += toast.offsetHeight + 10;
+    });
+  }
+</script>

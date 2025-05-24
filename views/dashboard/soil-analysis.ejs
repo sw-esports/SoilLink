@@ -1,0 +1,50 @@
+<div class="container mx-auto py-10">
+  <h1 class="text-3xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-flask text-green-600"></i> Soil Analysis</h1>
+  <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Submit New Soil Sample</h2>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label class="block mb-2 font-medium text-primary-dark">Sample Name</label>
+        <input type="text" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" placeholder="e.g. North Field, Garden Bed 1" required>
+      </div>
+      <div>
+        <label class="block mb-2 font-medium text-primary-dark">Date Collected</label>
+        <input type="date" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" required>
+      </div>
+      <div class="md:col-span-2">
+        <label class="block mb-2 font-medium text-primary-dark">Notes</label>
+        <textarea class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" rows="3" placeholder="Describe the sample location, conditions, etc."></textarea>
+      </div>
+      <div class="md:col-span-2 flex justify-end">
+        <button type="submit" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">Submit Sample</button>
+      </div>
+    </form>
+  </div>
+  <div class="bg-white rounded-xl shadow-lg p-6">
+    <h2 class="text-xl font-semibold mb-4">Recent Soil Samples</h2>
+    <table class="min-w-full table-auto border-collapse">
+      <thead>
+        <tr class="bg-green-100">
+          <th class="px-4 py-2 text-left">Date</th>
+          <th class="px-4 py-2 text-left">Sample Name</th>
+          <th class="px-4 py-2 text-left">Status</th>
+          <th class="px-4 py-2 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b hover:bg-green-50 transition">
+          <td class="px-4 py-2">2025-05-23</td>
+          <td class="px-4 py-2">Sample #1</td>
+          <td class="px-4 py-2"><span class="inline-block px-2 py-1 rounded bg-green-200 text-green-800 text-xs">Completed</span></td>
+          <td class="px-4 py-2"><a href="#" class="text-primary hover:underline">View</a></td>
+        </tr>
+        <tr class="hover:bg-green-50 transition">
+          <td class="px-4 py-2">2025-05-10</td>
+          <td class="px-4 py-2">Sample #2</td>
+          <td class="px-4 py-2"><span class="inline-block px-2 py-1 rounded bg-yellow-200 text-yellow-800 text-xs">Pending</span></td>
+          <td class="px-4 py-2"><a href="#" class="text-primary hover:underline">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

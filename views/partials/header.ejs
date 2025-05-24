@@ -1,0 +1,148 @@
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center">
+      <a href="/" class="flex items-center text-primary hover:text-primary-dark transition-colors duration-300">
+        <i class="fas fa-seedling text-2xl mr-2"></i>
+        <span class="font-bold text-xl">SoilLink</span>
+      </a>
+    </div>
+    
+    <nav class="hidden md:block">
+      <ul class="flex items-center space-x-8">
+        <li>
+          <a href="/" class="<%= path === '/' ? 'text-primary font-medium' : 'text-gray-600' %> hover:text-primary transition-colors duration-300 py-2 border-b-2 <%= path === '/' ? 'border-primary' : 'border-transparent' %>">
+            <i class="fas fa-home mr-1"></i> Home
+          </a>
+        </li>
+        <li>
+          <a href="/about" class="<%= path === '/about' ? 'text-primary font-medium' : 'text-gray-600' %> hover:text-primary transition-colors duration-300 py-2 border-b-2 <%= path === '/about' ? 'border-primary' : 'border-transparent' %>">
+            <i class="fas fa-info-circle mr-1"></i> About
+          </a>
+        </li>
+        <li>
+          <a href="/contact" class="<%= path === '/contact' ? 'text-primary font-medium' : 'text-gray-600' %> hover:text-primary transition-colors duration-300 py-2 border-b-2 <%= path === '/contact' ? 'border-primary' : 'border-transparent' %>">
+            <i class="fas fa-envelope mr-1"></i> Contact
+          </a>
+        </li>
+        <% if (typeof user !== 'undefined' && user) { %>
+          <li>
+            <a href="/dashboard/<%= user.id %>" class="<%= path && path.startsWith('/dashboard') ? 'text-primary font-medium' : 'text-gray-600' %> hover:text-primary transition-colors duration-300 py-2 border-b-2 <%= path && path.startsWith('/dashboard') ? 'border-primary' : 'border-transparent' %>">
+              <i class="fas fa-chart-line mr-1"></i> Dashboard
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </nav>
+    
+    <div class="flex items-center">
+      <% if (typeof user !== 'undefined' && user) { %>
+        <div class="relative group">
+          <button class="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-300 py-2 px-3 rounded-md hover:bg-gray-100 focus:outline-none">
+            <i class="fas fa-user-circle text-lg"></i>
+            <span class="font-medium"><%= user.name %></span>
+            <i class="fas fa-caret-down text-xs"></i>
+          </button>
+          <div class="absolute right-0 w-48 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-60 pointer-events-none group-hover:pointer-events-auto">
+            <div class="py-1">
+              <a href="/dashboard/<%= user.id %>/profile" id="profileLink" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors duration-300 z-50">
+                <i class="fas fa-id-card mr-2"></i> My Profile
+              </a>
+              <a href="#" id="logoutButton" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors duration-300" style="background-color: #f7fafc; color: #e53e3e; transition: all 0.3s; z-index: 50;">
+                <i class="fas fa-sign-out-alt mr-2"></i> Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      <% } else { %>
+        <div class="space-x-2 flex items-center">
+          <a href="/auth/login" class="hidden sm:inline-flex items-center px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white font-medium rounded-md transition-colors duration-300">
+            <i class="fas fa-sign-in-alt mr-2"></i>
+            Login
+          </a>
+          <a href="/auth/register" class="inline-flex items-center px-4 py-2 bg-primary text-white hover:bg-primary-dark font-medium rounded-md transition-colors duration-300 shadow-sm hover:shadow">
+            <i class="fas fa-user-plus mr-2"></i>
+            Register
+          </a>
+        </div>
+      <% } %>
+      
+      <!-- Mobile menu button -->
+      <button class="md:hidden ml-4 text-gray-500 hover:text-primary focus:outline-none mobile-toggle">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile menu, show/hide based on menu state -->
+  <div class="md:hidden mobile-menu hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
+      <a href="/" class="<%= path === '/' ? 'bg-primary-light text-primary' : 'text-gray-600' %> block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition-colors duration-300">
+        <i class="fas fa-home mr-2"></i> Home
+      </a>
+      <a href="/about" class="<%= path === '/about' ? 'bg-primary-light text-primary' : 'text-gray-600' %> block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition-colors duration-300">
+        <i class="fas fa-info-circle mr-2"></i> About
+      </a>
+      <a href="/contact" class="<%= path === '/contact' ? 'bg-primary-light text-primary' : 'text-gray-600' %> block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition-colors duration-300">
+        <i class="fas fa-envelope mr-2"></i> Contact
+      </a>
+      <% if (typeof user !== 'undefined' && user) { %>
+        <a href="/dashboard/<%= user.id %>" class="<%= path && path.startsWith('/dashboard') ? 'bg-primary-light text-primary' : 'text-gray-600' %> block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition-colors duration-300">
+          <i class="fas fa-chart-line mr-2"></i> Dashboard
+        </a>
+        <div class="border-t border-gray-200 mt-2 pt-2">
+          <a href="/dashboard/<%= user.id %>/profile" id="mobileProfileLink" class="text-gray-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition-colors duration-300">
+            <i class="fas fa-id-card mr-2"></i> My Profile
+          </a>
+          <a href="#" id="mobileLogoutButton" class="text-gray-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100" style="color: #e53e3e;">
+            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+          </a>
+        </div>
+      <% } else { %>
+        <div class="border-t border-gray-200 mt-2 pt-2 flex space-x-2 px-3">
+          <a href="/auth/login" class="flex-1 text-center px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white font-medium rounded-md transition-colors duration-300">
+            Login
+          </a>
+          <a href="/auth/register" class="flex-1 text-center px-4 py-2 bg-primary text-white hover:bg-primary-dark font-medium rounded-md transition-colors duration-300">
+            Register
+          </a>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) {
+      logoutButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = '/auth/logout';
+      });
+    }
+
+    const mobileLogoutButton = document.getElementById('mobileLogoutButton');
+    if (mobileLogoutButton) {
+      mobileLogoutButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = '/auth/logout';
+      });
+    }
+
+    const profileLink = document.getElementById('profileLink');
+    if (profileLink) {
+      profileLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = this.href;
+      });
+    }
+
+    const mobileProfileLink = document.getElementById('mobileProfileLink');
+    if (mobileProfileLink) {
+      mobileProfileLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = this.href;
+      });
+    }
+  });
+</script>
