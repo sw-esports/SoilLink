@@ -40,105 +40,292 @@
       </ul>
     </nav>
   </div>
-  
-  <div class="dashboard-content">
-    <div class="dashboard-header">
-      <h1>Welcome, <%= (profileUser && profileUser.name) || (user && user.name) || 'User' %>!</h1>
-      <p>Here's an overview of your soil analysis data</p>
-    </div>
-    
-    <div class="dashboard-stats grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-      <div class="stat-card bg-gradient-to-br from-green-100 to-green-200 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform">
-        <div class="stat-icon text-4xl text-green-600 mb-2 animate-bounce"><i class="fas fa-seedling"></i></div>
-        <div class="stat-info text-center">
-          <h3 class="text-3xl font-bold">0</h3>
-          <p class="text-green-900">Soil Samples</p>
-        </div>
-      </div>
-      <div class="stat-card bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform">
-        <div class="stat-icon text-4xl text-yellow-600 mb-2 animate-spin-slow"><i class="fas fa-thermometer-half"></i></div>
-        <div class="stat-info text-center">
-          <h3 class="text-3xl font-bold">N/A</h3>
-          <p class="text-yellow-900">Average pH Level</p>
-        </div>
-      </div>
-      <div class="stat-card bg-gradient-to-br from-green-200 to-green-50 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform">
-        <div class="stat-icon text-4xl text-green-400 mb-2 animate-pulse"><i class="fas fa-leaf"></i></div>
-        <div class="stat-info text-center">
-          <h3 class="text-3xl font-bold">N/A</h3>
-          <p class="text-green-900">Nutrient Index</p>
-        </div>
-      </div>
-      <div class="stat-card bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform">
-        <div class="stat-icon text-4xl text-blue-600 mb-2 animate-float"><i class="fas fa-calendar-check"></i></div>
-        <div class="stat-info text-center">
-          <h3 class="text-3xl font-bold">0</h3>
-          <p class="text-blue-900">Active Reports</p>
-        </div>
+    <div class="dashboard-content" data-user-id="<%= (profileUser && profileUser.id) || (user && user.id) %>">    <div class="dashboard-header justify-between items-center">
+      <div>
+        <h1>Welcome, <%= (profileUser && profileUser.name) || (user && user.name) || 'User' %>!</h1>
+        <p>Here's an overview of your soil analysis data</p>
+      </div>      <div class="flex mt-6 justify-between">
+        <button id="quick-analyze-btn" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary-dark transition flex items-center">
+          <i class="fas fa-microphone mr-2"></i> Quick Soil Analysis
+        </button>
+        <button id="refresh-dashboard" class=" text-green-700 p-0 rounded-full ">
+          <i class="fas fa-sync-alt  "></i>
+        </button>
       </div>
     </div>
+      <div class="dashboard-stats grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <!-- Water Level Card - Blue Theme -->
+      <div class="stat-card bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform transform-gpu">
+        <div class="stat-icon text-4xl text-blue-600 mb-2" style="animation: float 3s ease-in-out infinite;"><i class="fas fa-droplet"></i></div>
+        <div class="stat-info text-center">
+          <h3 class="text-3xl font-bold text-blue-800"><%= typeof avgMetrics !== 'undefined' && avgMetrics.waterLevel ? avgMetrics.waterLevel + '%' : '0' %></h3>
+          <p class="text-blue-800 font-medium">Latest Water Level</p>
+          <% if (avgMetrics && avgMetrics.recentDate) { %>
+            <p class="text-xs text-blue-600 mt-1">From latest sample</p>
+          <% } %>
+        </div>
+      </div>
 
-    <div class="dashboard-graphs grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-      <div class="bg-white rounded-xl shadow-lg p-6">
+      <!-- pH Level Card - Orange Theme -->
+      <div class="stat-card bg-gradient-to-br from-orange-100 to-orange-300 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform transform-gpu">
+        <div class="stat-icon text-4xl text-orange-600 mb-2" style="animation: spin-slow 6s linear infinite;"><i class="fas fa-thermometer-half"></i></div>
+        <div class="stat-info text-center">
+          <h3 class="text-3xl text-orange-600 font-bold"><%= typeof avgMetrics !== 'undefined' && avgMetrics.phLevel ? avgMetrics.phLevel : 'N/A' %></h3>
+          <p class="text-orange-800 font-medium">Latest pH Level</p>
+          <% if (avgMetrics && avgMetrics.recentDate) { %>
+            <p class="text-xs text-orange-600 mt-1">From latest sample</p>
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Soil Health Card - Green Theme -->
+      <div class="stat-card bg-gradient-to-br from-green-100 to-green-300 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform transform-gpu">
+        <div class="stat-icon text-4xl text-green-600 mb-2" style="animation: pulse 2s ease-in-out infinite;"><i class="fas fa-heart-pulse"></i></div>
+        <div class="stat-info text-center">
+          <h3 class="text-3xl font-bold"><%= typeof avgMetrics !== 'undefined' && avgMetrics.soilHealth ? avgMetrics.soilHealth + '%' : 'N/A' %></h3>
+          <p class="text-green-800 font-medium">Latest Soil Health</p>
+          <% if (avgMetrics && avgMetrics.recentDate) { %>
+            <p class="text-xs text-green-600 mt-1">From latest sample</p>
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Total Samples Card - Purple Theme -->
+      <div class="stat-card bg-gradient-to-br from-purple-100 to-purple-300 rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform transform-gpu">
+        <div class="stat-icon text-4xl text-purple-600 mb-2" style="animation: bounce 2s ease-in-out infinite;"><i class="fas fa-calendar-check"></i></div>
+        <div class="stat-info text-center">
+          <h3 class="text-3xl text-purple-600 font-bold"><%= typeof avgMetrics !== 'undefined' && avgMetrics.sampleCount ? avgMetrics.sampleCount : '0' %></h3>
+          <p class="text-purple-800 font-medium">Total Samples</p>
+          <% if (avgMetrics && avgMetrics.recentDate) { %>
+            <p class="text-xs text-purple-600 mt-1">Updated <%= avgMetrics.recentDate %></p>
+          <% } %>
+        </div>
+      </div>
+    </div>    <div class="dashboard-graphs grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white rounded-xl shadow-lg p-6" style="height: 350px;">
         <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><i class="fas fa-chart-line text-green-600"></i> Soil pH Trend</h3>
-        <canvas id="phTrendChart" height="180"></canvas>
+        <% if (typeof soilSamples !== 'undefined' && soilSamples.length > 0) { %>
+          <div style="height: 280px; position: relative;">
+            <canvas id="phTrendChart"></canvas>
+          </div>
+        <% } else { %>
+          <div class="flex flex-col items-center justify-center h-32 text-gray-400">
+            <i class="fas fa-chart-line text-3xl mb-2"></i>
+            <p>No data available</p>
+          </div>
+        <% } %>
       </div>
-      <div class="bg-white rounded-xl shadow-lg p-6">
+      <div class="bg-white rounded-xl shadow-lg p-6" style="height: 350px;">
         <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><i class="fas fa-chart-bar text-yellow-600"></i> Nutrient Index</h3>
-        <canvas id="nutrientBarChart" height="180"></canvas>
-      </div>
-    </div>
+        <% if (typeof soilSamples !== 'undefined' && soilSamples.length > 0) { %>
+          <div style="height: 280px; position: relative;">
+            <canvas id="nutrientBarChart"></canvas>
+          </div>
+        <% } else { %>
+          <div class="flex flex-col items-center justify-center h-32 text-gray-400">
+            <i class="fas fa-chart-bar text-3xl mb-2"></i>
+            <p>No data available</p>
+          </div>
+        <% } %>
+      </div>    </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/js/dashboard-charts.js"></script>
     
     <div class="dashboard-sections">
-      <div class="dashboard-section">
-        <div class="section-header">
-          <h2>Recent Soil Samples</h2>
-          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil-analysis" class="btn btn-sm btn-outline">View All</a>
+      <div class="dashboard-section bg-white rounded-xl shadow-lg p-6 mb-8">
+        <div class="section-header mb-6 flex justify-between items-center">
+          <h2 class="text-xl font-semibold">Recent Soil Samples</h2>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil-analysis" class="text-primary hover:underline">View All</a>
         </div>
-        <div class="empty-state">
-          <i class="fas fa-flask"></i>
-          <h3>No soil samples yet</h3>
-          <p>Start by submitting your first soil sample for analysis</p>
-          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil-analysis" class="btn btn-primary">Submit Sample</a>
-        </div>
+        
+        <% if (typeof soilSamples !== 'undefined' && soilSamples.length > 0) { %>
+          <div class="overflow-x-auto">
+            <table class="min-w-full table-auto border-collapse">
+              <thead>
+                <tr class="bg-green-100">
+                  <th class="px-4 py-2 text-left">Date</th>
+                  <th class="px-4 py-2 text-left">Sample Name</th>
+                  <th class="px-4 py-2 text-left">pH</th>
+                  <th class="px-4 py-2 text-left">Health</th>
+                  <th class="px-4 py-2 text-left">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% soilSamples.forEach(sample => { %>
+                  <tr class="border-b hover:bg-green-50 transition">
+                    <td class="px-4 py-2"><%= sample.submittedAt.toISOString().split('T')[0] %></td>
+                    <td class="px-4 py-2"><%= sample.name %></td>
+                    <td class="px-4 py-2"><%= sample.phLevel.toFixed(1) %></td>
+                    <td class="px-4 py-2">                      <div class="flex items-center">
+                        <div class="w-24 bg-gray-200 rounded-full h-2 mr-2">
+                          <div class="bg-green-600 h-2 rounded-full" style="width: <%= sample.soilHealth %>%;"></div>
+                        </div>
+                        <span><%= sample.soilHealth.toFixed(1) %>%</span>
+                      </div>
+                    </td>
+                    <td class="px-4 py-2">
+                      <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil/<%= sample._id %>" class="text-primary hover:underline">View</a>
+                    </td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        <% } else { %>
+          <div class="empty-state flex flex-col items-center justify-center py-10">
+            <i class="fas fa-flask text-5xl text-gray-300 mb-3"></i>
+            <h3 class="text-lg font-medium mb-2">No soil samples yet</h3>
+            <p class="text-gray-500 mb-4">Start by submitting your first soil sample for analysis</p>
+            <button id="submit-first-sample-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">Submit Sample</button>
+          </div>
+        <% } %>
       </div>
       
-      <div class="dashboard-section">
-        <div class="section-header">
-          <h2>Soil Health Tips</h2>
+      <div class="dashboard-section bg-white rounded-xl shadow-lg p-6">
+        <div class="section-header mb-6">
+          <h2 class="text-xl font-semibold">Soil Health Tips</h2>
         </div>
-        <div class="tips-container">
-          <div class="tip-card">
-            <div class="tip-icon">
-              <i class="fas fa-water"></i>
+        <div class="tips-container space-y-4">
+          <% if (typeof tips !== 'undefined' && tips.length > 0) { %>
+            <% tips.forEach((tip, index) => { %>
+              <div class="tip-card p-4 border border-green-100 rounded-lg hover:bg-green-50 transition">
+                <div class="flex">
+                  <div class="tip-icon bg-green-100 rounded-full p-3 mr-4">
+                    <i class="fas fa-<%= ['leaf', 'seedling', 'water'][index % 3] %> text-green-600"></i>
+                  </div>
+                  <div class="tip-content">
+                    <p><%= tip %></p>
+                  </div>
+                </div>
+              </div>
+            <% }); %>
+          <% } else { %>
+            <div class="tip-card p-4 border border-green-100 rounded-lg hover:bg-green-50 transition">
+              <div class="flex">
+                <div class="tip-icon bg-green-100 rounded-full p-3 mr-4">
+                  <i class="fas fa-water text-green-600"></i>
+                </div>
+                <div class="tip-content">
+                  <p>Ensure proper drainage in your soil to prevent waterlogging, which can lead to root rot and nutrient leaching.</p>
+                </div>
+              </div>
             </div>
-            <div class="tip-content">
-              <h3>Proper Water Management</h3>
-              <p>Ensure proper drainage in your soil to prevent waterlogging, which can lead to root rot and nutrient leaching.</p>
+            <div class="tip-card p-4 border border-green-100 rounded-lg hover:bg-green-50 transition">
+              <div class="flex">
+                <div class="tip-icon bg-green-100 rounded-full p-3 mr-4">
+                  <i class="fas fa-recycle text-green-600"></i>
+                </div>
+                <div class="tip-content">
+                  <p>Implement crop rotation to help maintain soil fertility and reduce pest and disease problems.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="tip-card">
-            <div class="tip-icon">
-              <i class="fas fa-recycle"></i>
+            <div class="tip-card p-4 border border-green-100 rounded-lg hover:bg-green-50 transition">
+              <div class="flex">
+                <div class="tip-icon bg-green-100 rounded-full p-3 mr-4">
+                  <i class="fas fa-bug text-green-600"></i>
+                </div>
+                <div class="tip-content">
+                  <p>Encourage beneficial soil organisms by adding organic matter and reducing tillage.</p>
+                </div>
+              </div>
             </div>
-            <div class="tip-content">
-              <h3>Crop Rotation</h3>
-              <p>Implement crop rotation to help maintain soil fertility and reduce pest and disease problems.</p>
-            </div>
-          </div>
-          <div class="tip-card">
-            <div class="tip-icon">
-              <i class="fas fa-bug"></i>
-            </div>
-            <div class="tip-content">
-              <h3>Beneficial Organisms</h3>
-              <p>Encourage beneficial soil organisms by adding organic matter and reducing tillage.</p>
-            </div>
-          </div>
+          <% } %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Audio Recording Modal -->
+<div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden flex items-center justify-center"></div>
+
+<!-- Quick Soil Analysis Modal -->
+<div id="quick-analysis-modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-6 z-50 hidden w-11/12 max-w-md">
+  <h3 class="text-xl font-semibold mb-2 text-center">Quick Soil Analysis</h3>
+  <p class="text-center text-gray-600 mb-4">Enter sample details</p>
+  
+  <form id="quick-sample-form" class="space-y-4">
+    <div>
+      <label class="block mb-1 font-medium text-primary-dark">Sample Name</label>
+      <input id="quick-sample-name" type="text" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" placeholder="e.g. Garden Soil" required>
+    </div>
+    <div>
+      <label class="block mb-1 font-medium text-primary-dark">Location</label>
+      <input id="quick-location" type="text" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" placeholder="e.g. Backyard">
+    </div>
+    <div>
+      <label class="block mb-1 font-medium text-primary-dark">Notes</label>
+      <textarea id="quick-notes" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" rows="2" placeholder="Any additional information"></textarea>
+    </div>
+    
+    <div class="flex gap-3 justify-end mt-6">
+      <button type="button" id="cancel-quick-analysis" class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100">Cancel</button>
+      <button type="submit" id="start-recording-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">Start Recording</button>
+    </div>
+  </form>
+</div>
+
+<!-- Audio Recording Modal -->
+<div id="audio-recording-modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-6 z-50 hidden w-11/12 max-w-md">
+  <h3 class="text-xl font-semibold mb-4 text-center">Recording Soil Audio</h3>
+  <p class="text-center mb-6">Place your device near the soil sample. Recording audio patterns...</p>
+  
+  <div id="audio-wave" class="h-32 w-full mb-6 bg-gray-50 rounded"></div>
+  
+  <div class="text-center">
+    <div class="inline-block animate-pulse bg-red-600 h-4 w-4 rounded-full"></div>
+    <span class="ml-2">Recording... <span id="timer">5</span>s</span>
+  </div>
+  
+  <div class="mt-6 flex justify-center">
+    <button id="cancel-recording" class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100">Cancel</button>
+  </div>
+</div>
+
+<!-- Processing Modal -->
+<div id="processing-modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-6 z-50 hidden w-11/12 max-w-md">
+  <h3 class="text-xl font-semibold mb-4 text-center">Analyzing Soil Sample</h3>
+  <p id="processing-step" class="text-center mb-6">Analyzing audio frequencies...</p>
+  
+  <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+    <div id="processing-progress" class="bg-green-600 h-2.5 rounded-full" style="width: 0%"></div>
+  </div>
+  
+  <div class="text-center">
+    <div class="inline-block animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-green-600"></div>
+    <span class="ml-2">Please wait...</span>
+  </div>
+</div>
+
+<!-- Result Modal -->
+<div id="result-modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-6 z-50 hidden w-11/12 max-w-md">
+  <div class="text-center">
+    <div class="inline-block mx-auto bg-green-100 rounded-full p-4 mb-4">
+      <i class="fas fa-check-circle text-4xl text-green-600"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Analysis Complete!</h3>
+    <p class="mb-6">Your soil sample has been successfully analyzed.</p>
+    
+    <button id="view-sample-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">View Results</button>
+  </div>
+</div>
+
+<script>
+  // Make soil data available to external scripts
+  <% if (typeof soilSamples !== 'undefined' && soilSamples.length > 0) { %>
+  const soilData = <%- JSON.stringify(soilSamples.map(s => ({
+    date: s.submittedAt.toISOString().split('T')[0],
+    name: s.name,
+    ph: s.phLevel,
+    health: s.soilHealth,
+    nitrogen: s.nitrogenLevel,
+    phosphorus: s.phosphorusLevel,
+    potassium: s.potassiumLevel,
+    water: s.waterLevel
+  }))) %>;
+  <% } %>
+</script>
+
+<!-- Include external scripts -->
+<!-- Using the updated analyzer script with improved caching disabled -->
+<script src="/js/dashboard-soil-analyzer.js"></script>

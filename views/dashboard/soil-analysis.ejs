@@ -1,25 +1,59 @@
-<div class="container mx-auto py-10">
+<div class="dashboard-container">
+  <div class="dashboard-sidebar">
+    <div class="user-info">
+      <div class="user-avatar">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="user-details">
+        <h3><%= (profileUser && profileUser.name) || (user && user.name) || 'User' %></h3>
+        <p><%= (profileUser && profileUser.email) || (user && user.email) || '' %></p>
+      </div>
+    </div>
+    <nav class="dashboard-nav">
+      <ul>
+        <li>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/profile"><i class="fas fa-user"></i> Profile</a>
+        </li>
+        <li class="active">
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil-analysis"><i class="fas fa-flask"></i> Soil Analysis</a>
+        </li>
+        <li>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/reports"><i class="fas fa-chart-bar"></i> Reports</a>
+        </li>
+        <li>
+          <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="dashboard-content" data-user-id="<%= (profileUser && profileUser.id) || (user && user.id) %>">
+    <div class="container mx-auto py-10" id="soil-analysis-container" data-user-id="<%= (profileUser && profileUser.id) || (user && user.id) %>">
   <h1 class="text-3xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-flask text-green-600"></i> Soil Analysis</h1>
   <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
     <h2 class="text-xl font-semibold mb-4">Submit New Soil Sample</h2>
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form id="sample-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
         <label class="block mb-2 font-medium text-primary-dark">Sample Name</label>
-        <input type="text" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" placeholder="e.g. North Field, Garden Bed 1" required>
+        <input id="sample-name" type="text" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" placeholder="e.g. North Field, Garden Bed 1" required>
       </div>
       <div>
-        <label class="block mb-2 font-medium text-primary-dark">Date Collected</label>
-        <input type="date" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" required>
+        <label class="block mb-2 font-medium text-primary-dark">Location</label>
+        <input id="location" type="text" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" placeholder="e.g. Backyard, Farm">
       </div>
       <div class="md:col-span-2">
         <label class="block mb-2 font-medium text-primary-dark">Notes</label>
-        <textarea class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" rows="3" placeholder="Describe the sample location, conditions, etc."></textarea>
+        <textarea id="notes" class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-primary" rows="3" placeholder="Describe the sample location, conditions, etc."></textarea>
       </div>
       <div class="md:col-span-2 flex justify-end">
-        <button type="submit" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">Submit Sample</button>
+        <button id="submit-sample-btn" type="button" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">Submit Sample</button>
       </div>
     </form>
   </div>
+  
   <div class="bg-white rounded-xl shadow-lg p-6">
     <h2 class="text-xl font-semibold mb-4">Recent Soil Samples</h2>
     <table class="min-w-full table-auto border-collapse">
@@ -27,24 +61,87 @@
         <tr class="bg-green-100">
           <th class="px-4 py-2 text-left">Date</th>
           <th class="px-4 py-2 text-left">Sample Name</th>
+          <th class="px-4 py-2 text-left">Health</th>
           <th class="px-4 py-2 text-left">Status</th>
           <th class="px-4 py-2 text-left">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="border-b hover:bg-green-50 transition">
-          <td class="px-4 py-2">2025-05-23</td>
-          <td class="px-4 py-2">Sample #1</td>
-          <td class="px-4 py-2"><span class="inline-block px-2 py-1 rounded bg-green-200 text-green-800 text-xs">Completed</span></td>
-          <td class="px-4 py-2"><a href="#" class="text-primary hover:underline">View</a></td>
-        </tr>
-        <tr class="hover:bg-green-50 transition">
-          <td class="px-4 py-2">2025-05-10</td>
-          <td class="px-4 py-2">Sample #2</td>
-          <td class="px-4 py-2"><span class="inline-block px-2 py-1 rounded bg-yellow-200 text-yellow-800 text-xs">Pending</span></td>
-          <td class="px-4 py-2"><a href="#" class="text-primary hover:underline">View</a></td>
-        </tr>
+        <% if (soilSamples && soilSamples.length > 0) { %>
+          <% soilSamples.forEach(sample => { %>
+            <tr class="border-b hover:bg-green-50 transition">
+              <td class="px-4 py-2"><%= sample.submittedAt.toISOString().split('T')[0] %></td>
+              <td class="px-4 py-2"><%= sample.name %></td>
+              <td class="px-4 py-2"><%= sample.soilHealth.toFixed(1) %></td>
+              <td class="px-4 py-2">
+                <% if (sample.status === 'completed') { %>
+                  <span class="inline-block px-2 py-1 rounded bg-green-200 text-green-800 text-xs">Completed</span>
+                <% } else { %>
+                  <span class="inline-block px-2 py-1 rounded bg-yellow-200 text-yellow-800 text-xs">Pending</span>
+                <% } %>
+              </td>
+              <td class="px-4 py-2">
+                <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil/<%= sample._id %>" class="text-primary hover:underline">View</a>
+              </td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="5" class="px-4 py-6 text-center text-gray-500">No soil samples yet. Submit your first sample above!</td>
+          </tr>
+        <% } %>
       </tbody>
     </table>
   </div>
 </div>
+
+<!-- Audio Recording Modal -->
+<div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden flex items-center justify-center"></div>
+
+<!-- Audio Recording Modal -->
+<div id="audio-recording-modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-6 z-50 hidden w-11/12 max-w-md">
+  <h3 class="text-xl font-semibold mb-4 text-center">Recording Soil Audio</h3>
+  <p class="text-center mb-6">Place your device near the soil sample. Recording audio patterns...</p>
+  
+  <div id="audio-wave" class="h-32 w-full mb-6 bg-gray-50 rounded"></div>
+  
+  <div class="text-center">
+    <div class="inline-block animate-pulse bg-red-600 h-4 w-4 rounded-full"></div>
+    <span class="ml-2">Recording... <span id="timer">5</span>s</span>
+  </div>
+  
+  <div class="mt-6 flex justify-center">
+    <button id="cancel-recording" class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100">Cancel</button>
+  </div>
+</div>
+
+<!-- Processing Modal -->
+<div id="processing-modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-6 z-50 hidden w-11/12 max-w-md">
+  <h3 class="text-xl font-semibold mb-4 text-center">Analyzing Soil Sample</h3>
+  <p id="processing-step" class="text-center mb-6">Analyzing audio frequencies...</p>
+  
+  <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+    <div id="processing-progress" class="bg-green-600 h-2.5 rounded-full" style="width: 0%"></div>
+  </div>
+  
+  <div class="text-center">
+    <div class="inline-block animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-green-600"></div>
+    <span class="ml-2">Please wait...</span>
+  </div>
+</div>
+
+<!-- Result Modal -->
+<div id="result-modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-6 z-50 hidden w-11/12 max-w-md">
+  <div class="text-center">
+    <div class="inline-block mx-auto bg-green-100 rounded-full p-4 mb-4">
+      <i class="fas fa-check-circle text-4xl text-green-600"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Analysis Complete!</h3>    <p class="mb-6">Your soil sample has been successfully analyzed.</p>
+    
+    <button id="view-sample-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">View Results</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<script src="/js/soil-analysis.js"></script>

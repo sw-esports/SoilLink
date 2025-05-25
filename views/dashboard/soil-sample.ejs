@@ -1,0 +1,207 @@
+<div class="container mx-auto py-10">  
+  <div class="mb-6">
+    <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil-analysis" class="text-primary hover:underline flex items-center">
+      <i class="fas fa-arrow-left mr-2"></i> Back to Soil Analysis
+    </a>
+  </div>
+
+  <h1 class="text-3xl font-bold mb-6 flex items-center gap-2">
+    <i class="fas fa-flask text-green-600"></i> 
+    Soil Sample: <%= soil.name %>
+  </h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Main soil info -->
+    <div class="lg:col-span-2">
+      <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-xl font-semibold">Sample Details</h2>
+          <span class="text-sm text-gray-500">Submitted on <%= soil.formattedDate %></span>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div>
+            <p class="text-sm text-gray-500">Sample Name</p>
+            <p class="font-medium"><%= soil.name %></p>
+          </div>
+          <% if (soil.location) { %>
+          <div>
+            <p class="text-sm text-gray-500">Location</p>
+            <p class="font-medium"><%= soil.location %></p>
+          </div>
+          <% } %>
+        </div>
+        
+        <% if (soil.notes) { %>
+        <div class="mb-6">
+          <p class="text-sm text-gray-500 mb-1">Notes</p>
+          <p class="p-3 bg-gray-50 rounded"><%= soil.notes %></p>
+        </div>
+        <% } %>
+      </div>
+
+      <!-- Soil Analysis Results -->
+      <div class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-xl font-semibold mb-4">Soil Analysis Results</h2>
+        
+        <!-- Soil Health -->
+        <div class="mb-6">
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">Overall Soil Health</span>
+            <span class="font-bold"><%= soil.soilHealth.toFixed(1) %>%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-green-600 h-2 rounded-full" style="width: <%= soil.soilHealth %>%"></div>
+          </div>
+          <%
+            let healthClass = 'text-red-600';
+            let healthText = 'Critical';
+            
+            if (soil.soilHealth >= 80) {
+              healthClass = 'text-green-600';
+              healthText = 'Excellent';
+            } else if (soil.soilHealth >= 60) {
+              healthClass = 'text-green-500';
+              healthText = 'Good';
+            } else if (soil.soilHealth >= 40) {
+              healthClass = 'text-yellow-500';
+              healthText = 'Average';
+            } else if (soil.soilHealth >= 20) {
+              healthClass = 'text-orange-500';
+              healthText = 'Poor';
+            }
+          %>
+          <p class="text-right mt-1 <%= healthClass %> font-medium"><%= healthText %></p>
+        </div>
+        
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- pH Level -->
+          <div>
+            <h3 class="font-medium mb-2">pH Level</h3>
+            <div class="flex items-center">
+              <div class="w-full bg-gradient-to-r from-red-500 via-yellow-300 to-blue-500 h-3 rounded-full mr-2"></div>
+              <span class="font-semibold"><%= soil.phLevel.toFixed(1) %></span>
+            </div>
+            <div class="flex justify-between mt-1 text-xs text-gray-500">
+              <span>Acidic (0)</span>
+              <span>Neutral (7)</span>
+              <span>Alkaline (14)</span>
+            </div>
+            <%
+              let phInterpretation = '';
+              if (soil.phLevel < 6.0) phInterpretation = 'Acidic';
+              else if (soil.phLevel > 7.5) phInterpretation = 'Alkaline';
+              else phInterpretation = 'Neutral (Optimal)';
+            %>
+            <p class="text-sm mt-2"><%= phInterpretation %></p>
+          </div>
+          
+          <!-- Water Retention -->
+          <div>
+            <h3 class="font-medium mb-2">Water Retention</h3>
+            <div class="flex items-center mb-1">
+              <div class="w-full bg-gray-200 rounded-full h-3 mr-2">
+                <div class="bg-blue-500 h-3 rounded-full" style="width: <%= soil.waterLevel %>%"></div>
+              </div>
+              <span class="font-semibold"><%= soil.waterLevel.toFixed(1) %>%</span>
+            </div>
+            <%
+              let waterInterpretation = '';
+              if (soil.waterLevel < 30) waterInterpretation = 'Low - May need frequent watering';
+              else if (soil.waterLevel > 70) waterInterpretation = 'High - Good water retention';
+              else waterInterpretation = 'Medium - Balanced water retention';
+            %>
+            <p class="text-sm mt-2"><%= waterInterpretation %></p>
+          </div>
+          
+          <!-- Nitrogen -->
+          <div>
+            <h3 class="font-medium mb-2">Nitrogen (N)</h3>
+            <div class="flex items-center mb-1">
+              <div class="w-full bg-gray-200 rounded-full h-3 mr-2">
+                <div class="bg-green-600 h-3 rounded-full" style="width: <%= soil.nitrogenLevel %>%"></div>
+              </div>
+              <span class="font-semibold"><%= soil.nitrogenLevel.toFixed(1) %>%</span>
+            </div>
+            <%
+              let nInterpretation = '';
+              if (soil.nitrogenLevel < 30) nInterpretation = 'Deficient';
+              else if (soil.nitrogenLevel > 70) nInterpretation = 'Abundant';
+              else nInterpretation = 'Adequate';
+            %>
+            <p class="text-sm mt-2"><%= nInterpretation %></p>
+          </div>
+          
+          <!-- Phosphorus -->
+          <div>
+            <h3 class="font-medium mb-2">Phosphorus (P)</h3>
+            <div class="flex items-center mb-1">
+              <div class="w-full bg-gray-200 rounded-full h-3 mr-2">
+                <div class="bg-orange-500 h-3 rounded-full" style="width: <%= soil.phosphorusLevel %>%"></div>
+              </div>
+              <span class="font-semibold"><%= soil.phosphorusLevel.toFixed(1) %>%</span>
+            </div>
+            <%
+              let pInterpretation = '';
+              if (soil.phosphorusLevel < 30) pInterpretation = 'Deficient';
+              else if (soil.phosphorusLevel > 70) pInterpretation = 'Abundant';
+              else pInterpretation = 'Adequate';
+            %>
+            <p class="text-sm mt-2"><%= pInterpretation %></p>
+          </div>
+          
+          <!-- Potassium -->
+          <div class="sm:col-span-2">
+            <h3 class="font-medium mb-2">Potassium (K)</h3>
+            <div class="flex items-center mb-1">
+              <div class="w-full bg-gray-200 rounded-full h-3 mr-2">
+                <div class="bg-purple-500 h-3 rounded-full" style="width: <%= soil.potassiumLevel %>%"></div>
+              </div>
+              <span class="font-semibold"><%= soil.potassiumLevel.toFixed(1) %>%</span>
+            </div>
+            <%
+              let kInterpretation = '';
+              if (soil.potassiumLevel < 30) kInterpretation = 'Deficient';
+              else if (soil.potassiumLevel > 70) kInterpretation = 'Abundant';
+              else kInterpretation = 'Adequate';
+            %>
+            <p class="text-sm mt-2"><%= kInterpretation %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Recommendations -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <h2 class="text-xl font-semibold mb-4">Recommendations</h2>
+        <ul class="space-y-4">
+          <% tips.forEach((tip, index) => { %>
+            <li class="flex items-start">
+              <div class="bg-green-100 rounded-full p-1 mt-1 mr-3">
+                <i class="fas fa-leaf text-green-600 text-sm"></i>
+              </div>
+              <p><%= tip %></p>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+      
+      <div class="bg-green-50 rounded-xl p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-info-circle text-xl text-green-600 mr-3"></i>
+          <h3 class="font-semibold">Did you know?</h3>
+        </div>
+        <p class="text-sm mb-4">Healthy soil typically contains:</p>
+        <ul class="text-sm space-y-2">
+          <li>• 45% minerals</li>
+          <li>• 25% water</li>
+          <li>• 25% air</li>
+          <li>• 5% organic matter</li>
+        </ul>
+        <p class="text-sm mt-4">The balance of these components significantly impacts plant growth and overall soil health.</p>
+      </div>
+    </div>
+  </div>
+</div>

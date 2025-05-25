@@ -26,53 +26,143 @@
         <li>
           <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </li>
-      </ul>
-    </nav>
+      </ul>    </nav>
   </div>
-  <div class="dashboard-content">
-    <div class="container mx-auto py-10">
-      <h1 class="text-3xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-chart-bar text-green-600"></i> Report History</h1>
-  <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
-    <h2 class="text-xl font-semibold mb-4">Your Soil Analysis Reports</h2>
-    <table class="min-w-full table-auto border-collapse">
-      <thead>
-        <tr class="bg-green-100">
-          <th class="px-4 py-2 text-left">Date</th>
-          <th class="px-4 py-2 text-left">Sample Name</th>
-          <th class="px-4 py-2 text-left">pH</th>
-          <th class="px-4 py-2 text-left">Nutrient Index</th>
-          <th class="px-4 py-2 text-left">Status</th>
-          <th class="px-4 py-2 text-left">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-b hover:bg-green-50 transition">
-          <td class="px-4 py-2">2025-05-23</td>
-          <td class="px-4 py-2">Sample #1</td>
-          <td class="px-4 py-2">6.7</td>
-          <td class="px-4 py-2">85</td>
-          <td class="px-4 py-2"><span class="inline-block px-2 py-1 rounded bg-green-200 text-green-800 text-xs">Completed</span></td>
-          <td class="px-4 py-2"><a href="#" class="text-primary hover:underline">View</a></td>
-        </tr>
-        <tr class="border-b hover:bg-green-50 transition">
-          <td class="px-4 py-2">2025-05-10</td>
-          <td class="px-4 py-2">Sample #2</td>
-          <td class="px-4 py-2">6.3</td>
-          <td class="px-4 py-2">78</td>
-          <td class="px-4 py-2"><span class="inline-block px-2 py-1 rounded bg-yellow-200 text-yellow-800 text-xs">Pending</span></td>
-          <td class="px-4 py-2"><a href="#" class="text-primary hover:underline">View</a></td>
-        </tr>
-        <tr class="hover:bg-green-50 transition">
-          <td class="px-4 py-2">2025-04-28</td>
-          <td class="px-4 py-2">Sample #3</td>
-          <td class="px-4 py-2">7.0</td>
-          <td class="px-4 py-2">92</td>
-          <td class="px-4 py-2"><span class="inline-block px-2 py-1 rounded bg-green-200 text-green-800 text-xs">Completed</span></td>
-          <td class="px-4 py-2"><a href="#" class="text-primary hover:underline">View</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  
+  <div class="dashboard-content" data-user-id="<%= (profileUser && profileUser.id) || (user && user.id) %>">
+    <div class="dashboard-header">
+      <h1>Soil Analysis Reports</h1>
+      <p>View and compare your soil sample history</p>
     </div>
+    
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4">Soil Sample History</h2>
+        <% if (soilSamples && soilSamples.length > 0) { %>
+        <div class="overflow-x-auto">
+          <table class="min-w-full table-auto border-collapse">
+            <thead>
+              <tr class="bg-green-100">
+                <th class="px-4 py-2 text-left">Date</th>
+                <th class="px-4 py-2 text-left">Sample Name</th>
+                <th class="px-4 py-2 text-left">pH Level</th>
+                <th class="px-4 py-2 text-left">Water</th>
+                <th class="px-4 py-2 text-left">N-P-K Levels</th>
+                <th class="px-4 py-2 text-left">Soil Health</th>
+                <th class="px-4 py-2 text-left">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% soilSamples.forEach(sample => { %>
+                <tr class="border-b hover:bg-green-50 transition">
+                  <td class="px-4 py-3"><%= sample.submittedAt.toISOString().split('T')[0] %></td>
+                  <td class="px-4 py-3"><%= sample.name %></td>
+                  <td class="px-4 py-3"><%= sample.phLevel.toFixed(1) %></td>
+                  <td class="px-4 py-3"><%= sample.waterLevel.toFixed(1) %>%</td>
+                  <td class="px-4 py-3">
+                    <span class="px-1 py-0.5 bg-green-100 text-green-800 rounded text-xs mr-1">N: <%= sample.nitrogenLevel.toFixed(0) %>%</span>
+                    <span class="px-1 py-0.5 bg-orange-100 text-orange-800 rounded text-xs mr-1">P: <%= sample.phosphorusLevel.toFixed(0) %>%</span>
+                    <span class="px-1 py-0.5 bg-purple-100 text-purple-800 rounded text-xs">K: <%= sample.potassiumLevel.toFixed(0) %>%</span>
+                  </td>
+                  <td class="px-4 py-3">
+                    <div class="flex items-center">
+                      <div class="w-24 bg-gray-200 rounded-full h-2 mr-2">
+                        <div class="bg-green-600 h-2 rounded-full" style="width: <%= sample.soilHealth %>%"></div>
+                      </div>
+                      <span><%= sample.soilHealth.toFixed(1) %>%</span>
+                    </div>
+                  </td>
+                  <td class="px-4 py-3">
+                    <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil/<%= sample._id %>" class="text-primary hover:underline">View Details</a>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>      <% } else { %>
+        <div class="text-center py-12">
+          <i class="fas fa-flask text-4xl text-gray-300 mb-3"></i>
+          <p class="text-gray-500">No soil samples found in your history.</p>
+          <a href="/dashboard/<%= (profileUser && profileUser.id) || (user && user.id) %>/soil-analysis" class="mt-4 inline-block bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark">Submit a Sample</a>
+        </div>
+      <% } %>
+    </div>
+    
+    <% if (soilSamples && soilSamples.length > 0) { %>    <div class="bg-white rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Soil Health Trend</h2>
+      <div class="h-64 w-full" id="soilHealthChart"></div>
+    </div>    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const ctx = document.getElementById('soilHealthChart').getContext('2d');
+          
+          // Extract data directly using arrays
+          const dates = [];
+          const healthData = [];
+          const phData = [];
+          const waterData = [];
+          
+          <% soilSamples.forEach(function(sample) { %>
+            dates.push('<%= sample.submittedAt.toISOString().split("T")[0] %>');
+            healthData.push(<%= sample.soilHealth %>);
+            phData.push(<%= sample.phLevel * 10 %>);
+            waterData.push(<%= sample.waterLevel %>);
+          <% }); %>
+          
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: dates,
+              datasets: [{
+                label: 'Soil Health',
+                data: healthData,
+                borderColor: 'rgb(34, 197, 94)',
+                backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                fill: true,
+                tension: 0.4
+              }, {
+                label: 'pH Level',
+                data: soilData.map(s => s.phLevel * 10), // Scale pH to be visible on same chart
+                borderColor: 'rgb(249, 115, 22)',
+                backgroundColor: 'transparent',
+                borderDash: [5, 5]
+              }, {
+                label: 'Water Retention',
+                data: soilData.map(s => s.waterLevel),
+                borderColor: 'rgb(59, 130, 246)',
+                backgroundColor: 'transparent',
+                borderDash: [3, 3]
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 100
+                }
+              },
+              plugins: {
+                tooltip: {
+                  callbacks: {
+                    label: function(context) {
+                      let label = context.dataset.label || '';
+                      if (label) {
+                        label += ': ';
+                      }
+                      if (context.dataset.label === 'pH Level') {
+                        label += (context.parsed.y / 10).toFixed(1); // Convert back to pH scale
+                      } else {
+                        label += context.parsed.y.toFixed(1) + '%';
+                      }
+                      return label;
+                    }
+                  }
+                }
+              }
+            }
+          });      });
+    </script>
+    <% } %>
   </div>
 </div>
