@@ -195,7 +195,15 @@ app.get('/debug/auth', (req, res) => {
 
 app.use('/', indexRoutes);
 app.use('/auth', authLimiter, authRoutes);
-app.use('/dashboard', checkAuth, dashboardRoutes);
+
+// Set up dashboard routes with no caching
+app.use('/dashboard', checkAuth, (req, res, next) => {
+  // Complete cache prevention for all dashboard routes
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0, s-maxage=0');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '-1');
+  next();
+}, dashboardRoutes);
 
 // 404 handler
 app.use((req, res) => {

@@ -1,34 +1,33 @@
 const NodeCache = require('node-cache');
 const logger = require('./logger');
 
-class CacheManager {
-  constructor() {
-    // Main cache with 1 hour TTL
+class CacheManager {  constructor() {
+    // Disable caching completely by setting TTL to 0
     this.cache = new NodeCache({ 
-      stdTTL: 3600, // 1 hour
-      checkperiod: 600, // Check for expired keys every 10 minutes
+      stdTTL: 0, // No caching - expire immediately
+      checkperiod: 1,
       useClones: false,
       deleteOnExpire: true,
       enableLegacyCallbacks: false,
-      maxKeys: 1000
+      maxKeys: 1
     });
 
-    // Session cache with 30 minute TTL
+    // Session cache disabled
     this.sessionCache = new NodeCache({ 
-      stdTTL: 1800, // 30 minutes
-      checkperiod: 300, // Check every 5 minutes
+      stdTTL: 0, // No caching - expire immediately
+      checkperiod: 1,
       useClones: false,
       deleteOnExpire: true,
-      maxKeys: 5000
+      maxKeys: 1
     });
 
-    // User data cache with 2 hour TTL
+    // User data cache disabled
     this.userCache = new NodeCache({ 
-      stdTTL: 7200, // 2 hours
-      checkperiod: 600,
+      stdTTL: 0, // No caching - expire immediately
+      checkperiod: 1,
       useClones: false,
       deleteOnExpire: true,
-      maxKeys: 10000
+      maxKeys: 1
     });
 
     this.setupEventListeners();

@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
     enum: ['user', 'admin'],
     default: 'user'
   },
+  soilSamples: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Soil'
+  }],
   createdAt: {
     type: Date,
     default: Date.now

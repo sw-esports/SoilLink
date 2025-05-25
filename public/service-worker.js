@@ -39,6 +39,25 @@ self.addEventListener('install', event => {
 
 // Cache and return requests with offline fallback
 self.addEventListener('fetch', event => {
+  // Don't cache dashboard or soil-related URLs
+  if (event.request.url.includes('/dashboard/') || 
+      event.request.url.includes('/soil/') ||
+      event.request.url.includes('/soil-analysis')) {
+    // Bypass cache completely for dashboard pages
+    event.respondWith(
+      fetch(event.request)
+        .catch(() => {
+          // Fallback to basic offline page if network fails
+          if (event.request.mode === 'navigate') {
+            return caches.match('/offline.html');
+          }
+          return new Response('Network error occurred', { status: 408 });
+        })
+    );
+    return;
+  }
+  
+  // For other resources, use cache-first strategy
   // Skip cross-origin requests
   if (event.request.url.startsWith(self.location.origin)) {
     event.respondWith(
