@@ -89,79 +89,83 @@
     
     <% if (soilSamples && soilSamples.length > 0) { %>    <div class="bg-white rounded-xl shadow-lg p-6">
       <h2 class="text-xl font-semibold mb-4">Soil Health Trend</h2>
-      <div class="h-64 w-full" id="soilHealthChart"></div>
-    </div>    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <div class="h-64 w-full"><canvas id="soilHealthChart"></canvas></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-          const ctx = document.getElementById('soilHealthChart').getContext('2d');
-          
-          // Extract data directly using arrays
-          const dates = [];
-          const healthData = [];
-          const phData = [];
-          const waterData = [];
-          
-          <% soilSamples.forEach(function(sample) { %>
-            dates.push('<%= sample.submittedAt.toISOString().split("T")[0] %>');
-            healthData.push(<%= sample.soilHealth %>);
-            phData.push(<%= sample.phLevel * 10 %>);
-            waterData.push(<%= sample.waterLevel %>);
-          <% }); %>
-          
-          new Chart(ctx, {
-            type: 'line',
-            data: {
-              labels: dates,
-              datasets: [{
+        const ctx = document.getElementById('soilHealthChart').getContext('2d');
+        // Prepare data arrays using EJS and output as JSON
+        const dates = <%- JSON.stringify(soilSamples.map(s => s.submittedAt.toISOString().split('T')[0])) %>;
+        const healthData = <%- JSON.stringify(soilSamples.map(s => s.soilHealth)) %>;
+        const phData = <%- JSON.stringify(soilSamples.map(s => s.phLevel * 10)) %>;
+        const waterData = <%- JSON.stringify(soilSamples.map(s => s.waterLevel)) %>;
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: dates,
+            datasets: [
+              {
                 label: 'Soil Health',
                 data: healthData,
                 borderColor: 'rgb(34, 197, 94)',
                 backgroundColor: 'rgba(34, 197, 94, 0.1)',
                 fill: true,
-                tension: 0.4
-              }, {
+                tension: 0.4,
+                pointStyle: 'circle',
+                pointRadius: 4,
+                pointBackgroundColor: 'rgb(34, 197, 94)'
+              },
+              {
                 label: 'pH Level',
-                data: soilData.map(s => s.phLevel * 10), // Scale pH to be visible on same chart
+                data: phData,
                 borderColor: 'rgb(249, 115, 22)',
                 backgroundColor: 'transparent',
-                borderDash: [5, 5]
-              }, {
+                pointStyle: 'circle',
+                pointRadius: 4,
+                pointBackgroundColor: 'rgb(249, 115, 22)'
+              },
+              {
                 label: 'Water Retention',
-                data: soilData.map(s => s.waterLevel),
+                data: waterData,
                 borderColor: 'rgb(59, 130, 246)',
                 backgroundColor: 'transparent',
-                borderDash: [3, 3]
-              }]
+                pointStyle: 'circle',
+                pointRadius: 4,
+                pointBackgroundColor: 'rgb(59, 130, 246)'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100
+              }
             },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              scales: {
-                y: {
-                  beginAtZero: true,
-                  max: 100
-                }
-              },
-              plugins: {
-                tooltip: {
-                  callbacks: {
-                    label: function(context) {
-                      let label = context.dataset.label || '';
-                      if (label) {
-                        label += ': ';
-                      }
-                      if (context.dataset.label === 'pH Level') {
-                        label += (context.parsed.y / 10).toFixed(1); // Convert back to pH scale
-                      } else {
-                        label += context.parsed.y.toFixed(1) + '%';
-                      }
-                      return label;
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    let label = context.dataset.label || '';
+                    if (label) {
+                      label += ': ';
                     }
+                    if (context.dataset.label === 'pH Level') {
+                      label += (context.parsed.y / 10).toFixed(1); // Convert back to pH scale
+                    } else {
+                      label += context.parsed.y.toFixed(1) + '%';
+                    }
+                    return label;
                   }
                 }
               }
             }
-          });      });
+          }
+        });
+      });
     </script>
     <% } %>
   </div>

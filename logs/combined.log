@@ -53,3 +53,353 @@
 {"level":"info","message":"MongoDB connected successfully","service":"soillink-app","timestamp":"2025-05-25T14:13:23.249Z"}
 {"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:13:27.857Z"}
 {"level":"warn","message":"MongoDB disconnected","service":"soillink-app","timestamp":"2025-05-25T14:14:12.634Z"}
+{"level":"info","message":"Server running on http://localhost:3000","service":"soillink-app","timestamp":"2025-05-25T14:15:06.168Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:15:06.193Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:15:06.197Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"soillink-app","timestamp":"2025-05-25T14:15:10.706Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:15:11.776Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:15:11.779Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:15:11.814Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:15:13.734Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:15:18.419Z"}
+{"email":"surajmaurya2007@gmail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.8","connection":"keep-alive","content-length":"61","content-type":"application/json","host":"localhost:3000","origin":"http://localhost:3000","referer":"http://localhost:3000/auth/login","sec-ch-ua":"\"Chromium\";v=\"136\", \"Brave\";v=\"136\", \"Not.A/Brand\";v=\"99\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-origin","sec-gpc":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:16:16.127Z"}
+{"email":"surajmaurya2007@gmail.com","level":"info","message":"Login successful:","service":"soillink-app","timestamp":"2025-05-25T14:16:16.263Z","userId":"6832fc6d9a73cd7078725be4"}
+{"level":"info","message":"Sending AJAX login success response","redirectUrl":"/dashboard/6832fc6d9a73cd7078725be4","service":"soillink-app","timestamp":"2025-05-25T14:16:16.265Z","userId":"6832fc6d9a73cd7078725be4"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:16.292Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:16.295Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:16.459Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:18.444Z"}
+{"level":"warn","message":"No token found in cookies","service":"soillink-app","timestamp":"2025-05-25T14:16:33.300Z"}
+{"email":"surajmaurya2007@gmail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.7","connection":"keep-alive","content-length":"61","content-type":"application/json","host":"localhost:3000","origin":"http://localhost:3000","referer":"http://localhost:3000/auth/login","sec-ch-ua":"\"Chromium\";v=\"136\", \"Brave\";v=\"136\", \"Not.A/Brand\";v=\"99\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-origin","sec-gpc":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:16:37.947Z"}
+{"email":"surajmaurya2007@gmail.com","level":"info","message":"Login successful:","service":"soillink-app","timestamp":"2025-05-25T14:16:38.078Z","userId":"6832fc6d9a73cd7078725be4"}
+{"level":"info","message":"Sending AJAX login success response","redirectUrl":"/dashboard/6832fc6d9a73cd7078725be4","service":"soillink-app","timestamp":"2025-05-25T14:16:38.079Z","userId":"6832fc6d9a73cd7078725be4"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:38.101Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:38.104Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:38.240Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:16:40.349Z"}
+{"email":"surajmoriya2007@gmail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate","accept-language":"en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7","connection":"keep-alive","content-length":"61","content-type":"application/json","host":"192.168.0.102:3000","origin":"http://192.168.0.102:3000","referer":"http://192.168.0.102:3000/auth/login","user-agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:18:11.030Z"}
+{"email":"surajmaurya2007@gmail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate","accept-language":"en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7","connection":"keep-alive","content-length":"61","content-type":"application/json","host":"192.168.0.102:3000","origin":"http://192.168.0.102:3000","referer":"http://192.168.0.102:3000/auth/login","user-agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:18:33.950Z"}
+{"email":"surajmaurya2007@gmail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate","accept-language":"en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7","connection":"keep-alive","content-length":"61","content-type":"application/json","host":"192.168.0.102:3000","origin":"http://192.168.0.102:3000","referer":"http://192.168.0.102:3000/auth/login","user-agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:18:56.516Z"}
+{"email":"surajmaurya2007@gmail.com","level":"info","message":"Login successful:","service":"soillink-app","timestamp":"2025-05-25T14:18:56.705Z","userId":"6832fc6d9a73cd7078725be4"}
+{"level":"info","message":"Sending AJAX login success response","redirectUrl":"/dashboard/6832fc6d9a73cd7078725be4","service":"soillink-app","timestamp":"2025-05-25T14:18:56.707Z","userId":"6832fc6d9a73cd7078725be4"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.766Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.771Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.941Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.959Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.964Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.970Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.978Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.988Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:56.994Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.003Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.011Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.017Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.650Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.691Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.697Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.704Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.711Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.717Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.731Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.744Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.749Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:18:57.756Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:21:54.617Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:21:54.620Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:22:02.158Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:22:07.216Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:22:07.218Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:22:07.250Z"}
+{"level":"error","message":"Unhandled error: req.flash is not a function","service":"soillink-app","stack":"TypeError: req.flash is not a function\n    at handleValidationErrors (D:\\pendrive\\SoilLink\\utils\\validation.js:193:13)\n    at Layer.handleRequest (D:\\pendrive\\SoilLink\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\pendrive\\SoilLink\\node_modules\\router\\lib\\route.js:157:13)\n    at middleware (D:\\pendrive\\SoilLink\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-05-25T14:23:35.158Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:23:50.374Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:23:50.377Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:23:50.401Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.487Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.491Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.644Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.647Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.650Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.653Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.658Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.660Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.673Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.676Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.680Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.684Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:04.688Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.045Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.048Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.051Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.054Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.057Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.059Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.069Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.073Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.077Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.080Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:05.097Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:06.781Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:24:12.186Z"}
+{"level":"info","message":"New user registered: test@mail.com","service":"soillink-app","timestamp":"2025-05-25T14:24:45.995Z"}
+{"email":"test@mail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.7","cache-control":"no-cache","connection":"keep-alive","content-length":"48","content-type":"application/json","host":"localhost:3000","origin":"http://localhost:3000","pragma":"no-cache","referer":"http://localhost:3000/auth/login","sec-ch-ua":"\"Chromium\";v=\"136\", \"Brave\";v=\"136\", \"Not.A/Brand\";v=\"99\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-origin","sec-gpc":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:24:59.982Z"}
+{"email":"test@mail.com","level":"info","message":"Login successful:","service":"soillink-app","timestamp":"2025-05-25T14:25:00.144Z","userId":"6833282d22f8d437ac316616"}
+{"level":"info","message":"Sending AJAX login success response","redirectUrl":"/dashboard/6833282d22f8d437ac316616","service":"soillink-app","timestamp":"2025-05-25T14:25:00.145Z","userId":"6833282d22f8d437ac316616"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:00.183Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:00.186Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:00.342Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:00.353Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:02.294Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:14.613Z"}
+{"email":"tes@mail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate","accept-language":"en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7","connection":"keep-alive","content-length":"47","content-type":"application/json","host":"192.168.0.102:3000","origin":"http://192.168.0.102:3000","referer":"http://192.168.0.102:3000/auth/login","user-agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:25:40.863Z"}
+{"email":"test@mail.com","headers":{"accept":"application/json","accept-encoding":"gzip, deflate","accept-language":"en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7","connection":"keep-alive","content-length":"48","content-type":"application/json","host":"192.168.0.102:3000","origin":"http://192.168.0.102:3000","referer":"http://192.168.0.102:3000/auth/login","user-agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36"},"isAjax":true,"level":"info","message":"Login attempt:","service":"soillink-app","timestamp":"2025-05-25T14:25:44.732Z"}
+{"email":"test@mail.com","level":"info","message":"Login successful:","service":"soillink-app","timestamp":"2025-05-25T14:25:44.952Z","userId":"6833282d22f8d437ac316616"}
+{"level":"info","message":"Sending AJAX login success response","redirectUrl":"/dashboard/6833282d22f8d437ac316616","service":"soillink-app","timestamp":"2025-05-25T14:25:44.953Z","userId":"6833282d22f8d437ac316616"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.320Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.323Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.488Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.505Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.508Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.511Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.530Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.542Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.548Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.554Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.557Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.560Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.942Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.971Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.983Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:45.991Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:46.025Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:46.031Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:46.037Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:46.041Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:46.049Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:25:46.056Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:28:52.268Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:28:52.273Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:28:52.475Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:28:54.742Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:34:58.993Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:34:58.996Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:34:59.384Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:01.789Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:21.303Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:21.306Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:21.730Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:24.242Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:29.514Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:29.624Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:29.962Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:35:32.261Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:41.692Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:41.695Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:41.813Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:43.064Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:43.068Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:43.214Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:43.783Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:43.787Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:43.936Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.081Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.395Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.397Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.519Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.726Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.728Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.891Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.956Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:44.958Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.093Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.134Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.136Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.268Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.328Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.330Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.466Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.606Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.608Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.727Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.987Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:45.990Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.131Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.195Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.199Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.314Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.356Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.358Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.480Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.562Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.566Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:46.681Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.200Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.203Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.434Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.474Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.476Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.645Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.646Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.669Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.776Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.814Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.817Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:47.944Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.006Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.010Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.158Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.191Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.194Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.430Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.435Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.445Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.591Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.647Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.662Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:48.883Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:49.743Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:49.748Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.151Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.180Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.274Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.428Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.436Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.604Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.611Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.798Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.806Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:50.842Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.011Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.027Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.242Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.250Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.418Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.424Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.441Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.505Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.603Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.627Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.632Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.833Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.856Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:51.860Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.024Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.034Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.262Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.266Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.320Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.423Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.545Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.550Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.761Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.771Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.915Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:52.975Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.023Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.028Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.358Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.390Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.395Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.555Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.630Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.641Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.838Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:53.843Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.004Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.073Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.119Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.126Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.384Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.389Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.542Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.597Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.756Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.761Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:54.990Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:36:58.478Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:37:02.409Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:37:02.413Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:37:02.690Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:37:05.410Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:37:58.337Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:37:58.340Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:37:58.468Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:38:00.802Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:43:49.150Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:43:49.154Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:43:49.737Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:43:53.365Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:43:59.146Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:43:59.149Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:43:59.285Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:01.371Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:25.791Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:25.793Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:25.915Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:27.991Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:33.701Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:33.702Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:34.086Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:37.006Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:53.960Z"}
+{"level":"info","message":"User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:53.963Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:54.104Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:44:56.225Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:45:36.955Z"}
+{"level":"info","message":"Global middleware: User 6833282d22f8d437ac316616 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:45:41.500Z"}
+{"level":"error","message":"Unhandled error: req.flash is not a function","service":"soillink-app","stack":"TypeError: req.flash is not a function\n    at handleValidationErrors (D:\\pendrive\\SoilLink\\utils\\validation.js:193:13)\n    at Layer.handleRequest (D:\\pendrive\\SoilLink\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\pendrive\\SoilLink\\node_modules\\router\\lib\\route.js:157:13)\n    at middleware (D:\\pendrive\\SoilLink\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-05-25T14:45:51.006Z"}
+{"level":"error","message":"Unhandled error: req.flash is not a function","service":"soillink-app","stack":"TypeError: req.flash is not a function\n    at handleValidationErrors (D:\\pendrive\\SoilLink\\utils\\validation.js:193:13)\n    at Layer.handleRequest (D:\\pendrive\\SoilLink\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\pendrive\\SoilLink\\node_modules\\router\\lib\\route.js:157:13)\n    at middleware (D:\\pendrive\\SoilLink\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-05-25T14:45:55.768Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:47:23.178Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:47:23.183Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:47:24.429Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:47:24.654Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:47:25.668Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:48:37.187Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:48:37.191Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:48:37.326Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:48:38.290Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:17.273Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:17.275Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:17.520Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:18.375Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:18.499Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:24.820Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:24.822Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:25.512Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:50:26.037Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:51:47.597Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:51:47.599Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:51:48.439Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:51:49.060Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:52:26.481Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:52:26.484Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:52:26.946Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:52:27.582Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:53:47.744Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:53:47.747Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:53:48.289Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:53:48.958Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:56:08.410Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:56:08.412Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:56:11.780Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T14:56:12.195Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:11.669Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:11.670Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:13.075Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:13.148Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:23.601Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:23.604Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:24.070Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:24.702Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:48.544Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:48.546Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:49.140Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:00:49.826Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:01:38.837Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:01:38.839Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:01:39.340Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:01:40.038Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:02:10.240Z"}
+{"level":"info","message":"User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:02:10.241Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:02:11.020Z"}
+{"level":"info","message":"Global middleware: User 6832fc6d9a73cd7078725be4 authenticated via token","service":"soillink-app","timestamp":"2025-05-25T15:02:11.418Z"}
+{"level":"warn","message":"MongoDB disconnected","service":"soillink-app","timestamp":"2025-05-25T15:02:19.925Z"}
