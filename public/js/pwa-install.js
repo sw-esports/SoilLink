@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Store the event for later use
 window.addEventListener('beforeinstallprompt', (e) => {
-  console.log('📱 beforeinstallprompt event fired!');
+ 
   e.preventDefault();
   deferredPrompt = e;
   
@@ -41,10 +41,10 @@ window.addEventListener('beforeinstallprompt', (e) => {
     const wasDismissedRecently = sessionStorage.getItem('pwaInstallPromptDismissed');
     
     if (!hasBeenShown && !wasDismissedRecently && installBanner) {
-      console.log('📱 Showing install banner');
+     
       setTimeout(() => {
         installBanner.classList.add('show');
-        console.log('📱 Install banner should now be visible');
+      
       }, 2000);
     }
   }
@@ -53,7 +53,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 // Handle install button click
 async function handleInstallClick() {
   if (!deferredPrompt) {
-    console.log('No deferred prompt available');
+   
     return;
   }
   
@@ -62,7 +62,7 @@ async function handleInstallClick() {
     // Wait for the user to respond to the prompt
   if (deferredPrompt) {
     const { outcome } = await deferredPrompt.userChoice;
-    console.log(`User response to the install prompt: ${outcome}`);
+   
     
     // Clear the deferred prompt variable
     deferredPrompt = null;
@@ -89,35 +89,35 @@ function handleCloseClick() {
 
 // Check PWA criteria and manifest on page load
 window.addEventListener('load', function() {
-  console.log('📱 Checking PWA installability criteria:');
+ 
   
   // Check if running in standalone mode (already installed)
   if (window.matchMedia('(display-mode: standalone)').matches) {
-    console.log('📱 App is already installed (running in standalone mode)');
+   
     return;
   }
   
   // Check manifest
   const manifestLink = document.querySelector('link[rel="manifest"]');
   if (manifestLink) {
-    console.log('📱 Manifest found:', manifestLink.href);
+   
     
     // Fetch and check manifest
     fetch(manifestLink.href)
       .then(response => response.json())
       .then(data => {
-        console.log('📱 Manifest loaded successfully:', data);
+       
         
         // Check icons
         if (data.icons && data.icons.length) {
-          console.log('📱 Icons found in manifest:', data.icons.length);
+       
           
           // Check icon URLs
-          data.icons.forEach(icon => {            console.log(`📱 Checking icon: ${icon.src}`);
+          data.icons.forEach(icon => {          
             fetch(icon.src)
               .then(response => {
                 if (response.ok) {
-                  console.log(`📱 Icon is accessible: ${icon.src}`);
+                 
                 } else {
                   console.error(`📱 Icon is NOT accessible: ${icon.src}`, response.status);
                 }
@@ -137,7 +137,7 @@ window.addEventListener('load', function() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations()
       .then(registrations => {
-        console.log('📱 Service worker registrations:', registrations.length);
+       
       })
       .catch(err => console.error('📱 Error checking service worker:', err));
   } else {

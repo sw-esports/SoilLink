@@ -1,5 +1,15 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+
+  // Fallback for images that fail to load (CSP-safe)
+  document.querySelectorAll('img.fallback-image').forEach(function(img) {
+    img.addEventListener('error', function() {
+      const fallback = img.getAttribute('data-fallback');
+      if (fallback && img.src !== fallback) {
+        img.src = fallback;
+      }
+    });
+  });
   // Mobile menu toggle
   const mobileToggle = document.querySelector('.mobile-toggle');
   const mainNav = document.querySelector('.main-nav');
